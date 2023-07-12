@@ -13,8 +13,8 @@ const Slider = (props) => {
   const swiperRef = useRef();
 
   return (
-    <div className="relative w-full">
-      <div className="gradient-effect absolute h-[50%] w-full bottom-0 z-10 bg-gradient-to-t from-white"></div>
+    <div className="relative mx-auto">
+      <div className="gradient-effect absolute h-[50%] w-full bottom-0 z-10 bg-gradient-to-t from-[#e3e6e6] md:via-[#e3e6e6]"></div>
       {
         <Swiper
           slidesPerView={1}
@@ -28,11 +28,15 @@ const Slider = (props) => {
             swiperRef.current = swiper;
           }}
           modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper w-full h-full"
+          className="mySwiper overflow-hidden"
         >
           {images.map((image, index) => (
             <SwiperSlide key={index} className="cursor-pointer">
-              <img src={image.img} alt="sale" />
+              <img
+                className="  h-[200px] xs:h-[250px] md:h-[400px] object-top object-cover w-full lg:h-auto md:w-full"
+                src={image.img}
+                alt="sale"
+              />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -42,13 +46,13 @@ const Slider = (props) => {
           className=" absolute left-4  hover:scale-125 active:scale-50 duration-200"
           onClick={() => swiperRef.current?.slidePrev()}
         >
-          <i class="fa-solid fa-chevron-right rotate-180"></i>
+          <i className="fa-solid fa-chevron-right rotate-180"></i>
         </button>
         <button
           className=" absolute right-4 hover:scale-125 active:scale-50 duration-200"
           onClick={() => swiperRef.current?.slideNext()}
         >
-          <i class="fa-solid fa-chevron-right"></i>
+          <i className="fa-solid fa-chevron-right"></i>
         </button>
       </div>
     </div>

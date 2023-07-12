@@ -59,12 +59,12 @@ const Navbar = () => {
   return (
     <div className="bg-gray-900 text-white">
       {/* Upper part */}
-      <ul className="nav p-3 flex flex-wrap justify-between items-center gap-4 md:gap-6 md:flex-nowrap whitespace-nowrap">
+      <ul className="nav p-3 flex flex-wrap justify-between items-center gap-4 md:gap-6 md:flex-nowrap whitespace-nowrap 2xl:justify-center 2xl:gap-16">
         <li className="nav-item flex items-center gap-4">
-          <button className="hamburger cursor-pointer text-xl md:hidden">
+          <button className="hamburger cursor-pointer text-2xl md:hidden">
             <i className="fa-solid fa-bars"></i>
           </button>
-          <div className="amazon-logo cursor-pointer w-16 mt-2 md:w-24">
+          <div className="amazon-logo cursor-pointer mt-1 w-20 md:w-24">
             <img className="h-full" src={amazon_logo_white} alt="amazon.in" />
           </div>
         </li>
@@ -81,7 +81,7 @@ const Navbar = () => {
           <i className="fa-solid fa-cart-shopping"></i>{" "}
           <span className="hidden md:inline text-base font-bold">Cart</span>{" "}
         </li>
-        <li className="nav-item search flex items-center w-full text-black md:order-3 md:mx-4">
+        <li className="nav-item search flex items-center mx-auto w-full text-black md:order-3 md:mx-4 max-w-2xl">
           <select
             defaultValue={selected}
             className="h-10 w-28 hidden lg:block border-2 text-xs rounded-l-md bg-gray-100"
@@ -102,15 +102,15 @@ const Navbar = () => {
             })}
           </select>
           <input
-            className="w-full rounded-l-md border-none  outline-none px-2 py-1 md:py-2 lg:rounded-none"
+            className="w-full rounded-l-lg border-none outline-none px-2 py-2.5 lg:py-2 lg:rounded-none"
             type="search"
             name="search"
             id="search"
             placeholder="Search Amazon.in"
           />
-          <div className="bg-white rounded-r-md focus:outline-4 outline-red-600">
-            <button className="cursor-pointer outline-none border-none px-2.5 py-1 bg-orange-300 rounded-md hover:bg-orange-400 md:py-[6px] md:px-3.5 md:text-xl md:rounded-l-none">
-              <i className="fa-solid fa-magnifying-glass"></i>
+          <div className="bg-white rounded-r-lg focus:outline-4 md:rounded-r-md">
+            <button className="cursor-pointer rounded-r-lg outline-none border-none px-4 py-2 bg-orange-300 rounded-md hover:bg-orange-400 md:py-[7px] lg:py-[5.5px] md:px-3.5 md:text-xl md:rounded-l-none">
+              <i className="fa-solid fa-magnifying-glass text-xl"></i>
             </button>
           </div>
         </li>
@@ -143,7 +143,7 @@ const Navbar = () => {
         </li>
       </ul>
       {/* lower part */}
-      <ul className="flex items-center gap-4 overflow-auto bg-gray-800 px-4 py-3 text-xs whitespace-nowrap md:text-sm">
+      <ul className="flex items-center gap-4 overflow-auto bg-gray-800 px-4 py-3 text-sm whitespace-nowrap 2xl:justify-center 2xl:gap-16">
         <li className="hamburger-all cursor-pointer hidden md:block">
           <button className="hamburger cursor-pointer text-xl gap-2 flex items-center">
             <i className="fa-solid fa-bars"></i>

@@ -8,6 +8,7 @@ import img3 from "../assets/slider/3.jpg";
 import img4 from "../assets/slider/4.jpg";
 import img5 from "../assets/slider/5.jpg";
 import img6 from "../assets/slider/6.jpg";
+import HomescreenGrid from "./HomescreenGrid";
 
 const Homescreen = () => {
   const images = [
@@ -22,6 +23,7 @@ const Homescreen = () => {
   return (
     <div className="relative max-w-[1500px] mx-auto">
       <Slider images={images} />
+      <HomescreenGrid />
     </div>
   );
 };
