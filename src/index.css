@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
+/* .swiper-button-next, .swiper-button-prev{
+    position: absolute;
+    top: 0;
+    height: 100px;
+    width: 50px;
+    border: 2px solid black;
+    margin: 0;
+    padding: 0px 0;
+}
+.swiper-button-prev{
+    right: 0;
+}
+.swiper-button-next{
+    right: 0;
+}
+.swiper-button-prev:hover, .swiper-button-next:hover{
+    border: 2px solid black;
+} */
 @tailwind utilities;
