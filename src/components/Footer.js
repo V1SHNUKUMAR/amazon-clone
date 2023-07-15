@@ -158,7 +158,7 @@ const Footer = () => {
       </div>
       <div className="bg-gray-900 text-xs p-8">
         <div className=" mx-auto grid align-middle px-6 py-6 grid-cols-2 max-w-xs md:max-w-5xl md:grid-cols-4 gap-4">
-          <p className="nav_a hover:underline">
+          <p className=" nav_a cursor-pointer hover:underline">
             AbeBooks
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -167,7 +167,7 @@ const Footer = () => {
               &amp; collectibles
             </span>
           </p>
-          <p className="nav_a hover:underline">
+          <p className=" nav_a cursor-pointer hover:underline">
             Shopbop
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -176,7 +176,7 @@ const Footer = () => {
               Fashion Brands
             </span>
           </p>
-          <p className="nav_a hover:underline">
+          <p className=" nav_a cursor-pointer hover:underline">
             Amazon Web Services
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -185,7 +185,7 @@ const Footer = () => {
               Computing Services
             </span>
           </p>
-          <p className="nav_a hover:underline">
+          <p className=" nav_a cursor-pointer hover:underline">
             Amazon Business
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -194,7 +194,7 @@ const Footer = () => {
               Your Business
             </span>
           </p>
-          <p className="nav_a hover:underline">
+          <p className=" nav_a cursor-pointer hover:underline">
             Audible
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -203,7 +203,7 @@ const Footer = () => {
               Audio Books
             </span>
           </p>
-          <p className="nav_a hover:underline">
+          <p className=" nav_a cursor-pointer hover:underline">
             Prime Now
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -213,7 +213,7 @@ const Footer = () => {
               on Everyday Items
             </span>
           </p>
-          <p className="nav_a hover:underline">
+          <p className=" nav_a cursor-pointer hover:underline">
             DPReview
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -222,7 +222,7 @@ const Footer = () => {
               Photography
             </span>
           </p>
-          <p className="nav_a hover:underline">
+          <p className=" nav_a cursor-pointer hover:underline">
             Amazon Prime Music
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -231,7 +231,7 @@ const Footer = () => {
               Over 15 million podcast episodes{" "}
             </span>
           </p>
-          <p className="nav_a hover:underline">
+          <p className=" nav_a cursor-pointer hover:underline">
             IMDb
             <br />
             <span className="navFooterDescText text-gray-400">
