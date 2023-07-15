@@ -15,24 +15,16 @@ const Footer = () => {
             </h2>
             <nav className="list-none mb-10 space-y-2 text-gray-200">
               <li>
-                <a className=" hover:underline" href="/">
-                  About Us
-                </a>
+                <p className="cursor-pointer hover:underline">About Us</p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
-                  Careers
-                </a>
+                <p className="cursor-pointer hover:underline">Careers</p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
-                  Press Releases
-                </a>
+                <p className="cursor-pointer hover:underline">Press Releases</p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
-                  Amazon Science
-                </a>
+                <p className="cursor-pointer hover:underline">Amazon Science</p>
               </li>
             </nav>
           </div>
@@ -42,19 +34,13 @@ const Footer = () => {
             </h2>
             <nav className="list-none mb-10 space-y-2 text-gray-200">
               <li>
-                <a className="hover:underline" href="/">
-                  Facebook
-                </a>
+                <p className="cursor-pointer  hover:underline">Facebook</p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
-                  Twitter
-                </a>
+                <p className="cursor-pointer  hover:underline">Twitter</p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
-                  Instagram
-                </a>
+                <p className="cursor-pointer  hover:underline">Instagram</p>
               </li>
             </nav>
           </div>
@@ -64,44 +50,42 @@ const Footer = () => {
             </h2>
             <nav className="list-none mb-10 space-y-2 text-gray-200">
               <li>
-                <a className="hover:underline" href="/">
-                  Sell on Amazon
-                </a>
+                <p className="cursor-pointer hover:underline">Sell on Amazon</p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
+                <p className=" cursor-pointer hover:underline">
                   Sell under Amazon Accelerator
-                </a>
+                </p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
+                <p className=" cursor-pointer hover:underline">
                   Protect and Build Your Brand
-                </a>
+                </p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
+                <p className=" cursor-pointer hover:underline">
                   Amazon Global Selling
-                </a>
+                </p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
+                <p className="cursor-pointer hover:underline">
                   Become an Affiliate
-                </a>
+                </p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
+                <p className="cursor-pointer  hover:underline">
                   Fulfilment by Amazon
-                </a>
+                </p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
+                <p className=" cursor-pointer hover:underline">
                   Advertise Your Products
-                </a>
+                </p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
+                <p className="cursor-pointer  hover:underline">
                   Amazon Pay on Merchants
-                </a>
+                </p>
               </li>
             </nav>
           </div>
@@ -111,34 +95,28 @@ const Footer = () => {
             </h2>
             <nav className="list-none mb-10 space-y-2 text-gray-200">
               <li>
-                <a className="hover:underline" href="/">
+                <p className="cursor-pointer hover:underline">
                   COVID-19 and Amazon
-                </a>
+                </p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
-                  Your Account
-                </a>
+                <p className="cursor-pointer hover:underline">Your Account</p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
-                  Returns Centre
-                </a>
+                <p className="cursor-pointer hover:underline">Returns Centre</p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
+                <p className="cursor-pointer hover:underline">
                   100% Purchase Protection
-                </a>
+                </p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
+                <p className="cursor-pointer hover:underline">
                   Amazon App Download
-                </a>
+                </p>
               </li>
               <li>
-                <a className="hover:underline" href="/">
-                  Help
-                </a>
+                <p className="cursor-pointer hover:underline">Help</p>
               </li>
             </nav>
           </div>
@@ -180,7 +158,7 @@ const Footer = () => {
       </div>
       <div className="bg-gray-900 text-xs p-8">
         <div className=" mx-auto grid align-middle px-6 py-6 grid-cols-2 max-w-xs md:max-w-5xl md:grid-cols-4 gap-4">
-          <a href="https://www.abebooks.com/" className="nav_a hover:underline">
+          <p className="nav_a hover:underline">
             AbeBooks
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -188,8 +166,8 @@ const Footer = () => {
               <br />
               &amp; collectibles
             </span>
-          </a>
-          <a href="https://www.shopbop.com/" className="nav_a hover:underline">
+          </p>
+          <p className="nav_a hover:underline">
             Shopbop
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -197,11 +175,8 @@ const Footer = () => {
               <br />
               Fashion Brands
             </span>
-          </a>
-          <a
-            href="https://aws.amazon.com/what-is-cloud-computing/?sc_channel=EL&amp;sc_campaign=IN_amazonfooter"
-            className="nav_a hover:underline"
-          >
+          </p>
+          <p className="nav_a hover:underline">
             Amazon Web Services
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -209,11 +184,8 @@ const Footer = () => {
               <br />
               Computing Services
             </span>
-          </a>
-          <a
-            href="/business?ref=footer_aingw"
-            className="nav_a hover:underline"
-          >
+          </p>
+          <p className="nav_a hover:underline">
             Amazon Business
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -221,8 +193,8 @@ const Footer = () => {
               <br />
               Your Business
             </span>
-          </a>
-          <a href="https://www.audible.in/" className="nav_a hover:underline">
+          </p>
+          <p className="nav_a hover:underline">
             Audible
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -230,8 +202,8 @@ const Footer = () => {
               <br />
               Audio Books
             </span>
-          </a>
-          <a href="/now?ref=footer_amznow" className="nav_a hover:underline">
+          </p>
+          <p className="nav_a hover:underline">
             Prime Now
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -240,8 +212,8 @@ const Footer = () => {
               <br />
               on Everyday Items
             </span>
-          </a>
-          <a href="https://www.dpreview.com/" className="nav_a hover:underline">
+          </p>
+          <p className="nav_a hover:underline">
             DPReview
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -249,11 +221,8 @@ const Footer = () => {
               <br />
               Photography
             </span>
-          </a>
-          <a
-            href="/music/prime?ref=footer_apm"
-            className="nav_a hover:underline"
-          >
+          </p>
+          <p className="nav_a hover:underline">
             Amazon Prime Music
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -261,8 +230,8 @@ const Footer = () => {
               <br />
               Over 15 million podcast episodes{" "}
             </span>
-          </a>
-          <a href="https://www.imdb.com/" className="nav_a hover:underline">
+          </p>
+          <p className="nav_a hover:underline">
             IMDb
             <br />
             <span className="navFooterDescText text-gray-400">
@@ -270,7 +239,7 @@ const Footer = () => {
               <br />
               &amp; Celebrities
             </span>
-          </a>
+          </p>
         </div>
         <div className="space-y-1">
           <div className="text-center flex justify-center items-center gap-2 md:gap-4">
