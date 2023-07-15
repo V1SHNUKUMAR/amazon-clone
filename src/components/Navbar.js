@@ -57,9 +57,9 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="bg-gray-900 text-white sticky top-0 z-50">
       {/* Upper part */}
-      <ul className="nav p-3 flex flex-wrap justify-between items-center gap-4 md:gap-6 md:flex-nowrap whitespace-nowrap 2xl:justify-center">
+      <ul className="nav top-0 p-3 flex flex-wrap justify-between items-center gap-4 md:gap-6 md:flex-nowrap whitespace-nowrap 2xl:justify-center">
         <li className="nav-item flex items-center gap-4">
           <button className="hamburger cursor-pointer text-2xl md:hidden">
             <i className="fa-solid fa-bars"></i>
