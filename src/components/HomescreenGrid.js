@@ -2,6 +2,8 @@
 
 import React from "react";
 import ProductSlider from "./ProductSlider";
+import Signin from "./Signin";
+import Footer from "./Footer";
 
 const HomescreenGrid = () => {
   const grid_1ItemsData = [
@@ -484,156 +486,182 @@ const HomescreenGrid = () => {
   return (
     <div
       id="main-grid"
-      className="p-4 pt-0 absolute top-[70%] z-10 w-full md:top-[60%] lg:top-[50%]"
+      className=" pt-0 absolute top-[70%] z-10 w-full md:top-[60%] lg:top-[50%]"
     >
-      {/* grid 1 of 4 */}
-      <div
-        id="grid-1/4"
-        className="grid place-items-center gap-4 md:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-      >
-        <GridItem
-          title={grid_1ItemsData[0].title}
-          images={grid_1ItemsData[0].images}
-          buttonName={grid_1ItemsData[0].buttonName}
+      <div className="p-4">
+        {/* grid 1 of 4 */}
+        <div
+          id="grid-1/4"
+          className="grid place-items-center gap-4 md:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          <GridItem
+            title={grid_1ItemsData[0].title}
+            images={grid_1ItemsData[0].images}
+            buttonName={grid_1ItemsData[0].buttonName}
+          />
+          <GridItem
+            title={grid_1ItemsData[1].title}
+            images={grid_1ItemsData[1].images}
+            buttonName={grid_1ItemsData[1].buttonName}
+          />
+          <GridItem
+            title={grid_1ItemsData[2].title}
+            images={grid_1ItemsData[2].images}
+            buttonName={grid_1ItemsData[2].buttonName}
+          />
+          {/* sign in + ad component*/}
+          <GridItem
+            title={"Sign in for your best experience"}
+            images={null}
+            buttonName={null}
+          />
+          <GridItem
+            title={grid_1ItemsData[3].title}
+            images={grid_1ItemsData[3].images}
+            buttonName={grid_1ItemsData[3].buttonName}
+          />
+          <GridItem
+            title={grid_1ItemsData[4].title}
+            images={grid_1ItemsData[4].images}
+            buttonName={grid_1ItemsData[4].buttonName}
+          />
+          <GridItem
+            title={grid_1ItemsData[5].title}
+            images={grid_1ItemsData[5].images}
+            buttonName={grid_1ItemsData[5].buttonName}
+          />
+          <GridItem
+            title={grid_1ItemsData[6].title}
+            images={grid_1ItemsData[6].images}
+            buttonName={grid_1ItemsData[6].buttonName}
+          />
+        </div>
+        {/* productSlider */}
+        <div id="productSlider1" className="p-5 bg-white my-4">
+          <ProductSlider
+            title={productSlider1Data.title}
+            buttonName={productSlider1Data.buttonName}
+            allProductsData={productSlider1Data.allProductsData}
+          />
+        </div>
+        <div id="productSlider2" className="p-5 bg-white my-4">
+          <ProductSlider
+            title={productSlider2Data.title}
+            buttonName={productSlider2Data.buttonName}
+            allProductsData={productSlider2Data.allProductsData}
+          />
+        </div>
+        <div id="productSlider3" className="p-5 bg-white my-4">
+          <ProductSlider
+            title={productSlider3Data.title}
+            buttonName={productSlider3Data.buttonName}
+            allProductsData={productSlider3Data.allProductsData}
+          />
+        </div>
+        {/* advertisement */}
+        <img
+          className="object-cover object-center w-full md:w-3/4 my-4 mx-auto"
+          src={
+            "https://m.media-amazon.com/images/G/31/AMS/IN/970X250-_desktop_banner.jpg"
+          }
+          alt="ad"
         />
-        <GridItem
-          title={grid_1ItemsData[1].title}
-          images={grid_1ItemsData[1].images}
-          buttonName={grid_1ItemsData[1].buttonName}
-        />
-        <GridItem
-          title={grid_1ItemsData[2].title}
-          images={grid_1ItemsData[2].images}
-          buttonName={grid_1ItemsData[2].buttonName}
-        />
-        {/* sign in + ad component*/}
-        <GridItem
-          title={"Sign in for your best experience"}
-          images={null}
-          buttonName={null}
-        />
-        <GridItem
-          title={grid_1ItemsData[3].title}
-          images={grid_1ItemsData[3].images}
-          buttonName={grid_1ItemsData[3].buttonName}
-        />
-        <GridItem
-          title={grid_1ItemsData[4].title}
-          images={grid_1ItemsData[4].images}
-          buttonName={grid_1ItemsData[4].buttonName}
-        />
-        <GridItem
-          title={grid_1ItemsData[5].title}
-          images={grid_1ItemsData[5].images}
-          buttonName={grid_1ItemsData[5].buttonName}
-        />
-        <GridItem
-          title={grid_1ItemsData[6].title}
-          images={grid_1ItemsData[6].images}
-          buttonName={grid_1ItemsData[6].buttonName}
-        />
+        {/* grid 2 of 4 */}
+        <div
+          id="grid-1/4"
+          className="grid place-items-center gap-4 md:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          <GridItem
+            title={grid_2ItemsData[0].title}
+            images={grid_2ItemsData[0].images}
+            buttonName={grid_2ItemsData[0].buttonName}
+          />
+          <GridItem
+            title={grid_2ItemsData[1].title}
+            images={grid_2ItemsData[1].images}
+            buttonName={grid_2ItemsData[1].buttonName}
+          />
+          <GridItem
+            title={grid_2ItemsData[2].title}
+            images={grid_2ItemsData[2].images}
+            buttonName={grid_2ItemsData[2].buttonName}
+          />
+          <GridItem
+            title={grid_2ItemsData[3].title}
+            images={grid_2ItemsData[3].images}
+            buttonName={grid_2ItemsData[3].buttonName}
+          />
+        </div>
+        {/* offer poster */}
+        <div className=" md:p-4 my-4 bg-white">
+          <img
+            className="cursor-pointer"
+            src="https://images-eu.ssl-images-amazon.com/images/G/31/APAYMOVIE/BAdhaaiDo/DF_1_GWeditorial_2300x646._CB599982488_.jpg"
+            alt=""
+          />
+        </div>
       </div>
-      {/* productSlider */}
-      <div id="productSlider1" className="p-5 bg-white my-4">
-        <ProductSlider
-          title={productSlider1Data.title}
-          buttonName={productSlider1Data.buttonName}
-          allProductsData={productSlider1Data.allProductsData}
-        />
-      </div>
-      <div id="productSlider2" className="p-5 bg-white my-4">
-        <ProductSlider
-          title={productSlider2Data.title}
-          buttonName={productSlider2Data.buttonName}
-          allProductsData={productSlider2Data.allProductsData}
-        />
-      </div>
-      <div id="productSlider3" className="p-5 bg-white my-4">
-        <ProductSlider
-          title={productSlider3Data.title}
-          buttonName={productSlider3Data.buttonName}
-          allProductsData={productSlider3Data.allProductsData}
-        />
-      </div>
-      {/* grid 2 of 4 */}
-      <div
-        id="grid-1/4"
-        className="grid place-items-center gap-4 md:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-      >
-        <GridItem
-          title={grid_2ItemsData[0].title}
-          images={grid_2ItemsData[0].images}
-          buttonName={grid_2ItemsData[0].buttonName}
-        />
-        <GridItem
-          title={grid_2ItemsData[1].title}
-          images={grid_2ItemsData[1].images}
-          buttonName={grid_2ItemsData[1].buttonName}
-        />
-        <GridItem
-          title={grid_2ItemsData[2].title}
-          images={grid_2ItemsData[2].images}
-          buttonName={grid_2ItemsData[2].buttonName}
-        />
-        <GridItem
-          title={grid_2ItemsData[3].title}
-          images={grid_2ItemsData[3].images}
-          buttonName={grid_2ItemsData[3].buttonName}
-        />
-      </div>
-      {/* advertisement */}
-      <img
-        className="object-cover object-center w-full md:w-3/4 my-4 mx-auto"
-        src={
-          "https://m.media-amazon.com/images/G/31/AMS/IN/970X250-_desktop_banner.jpg"
-        }
-        alt="ad"
-      />
+      {/* SignIn component */}
+      <Signin />
+      {/* footer */}
+      <Footer />
     </div>
   );
 };
 
 export default HomescreenGrid;
 
+// grid item component
 const GridItem = (props) => {
   const { title, images, buttonName } = props;
 
   return (
     <div className="flex flex-col gap-4 h-full">
-      <div className="flex flex-col justify-between gap-2 bg-white p-4 drop-shadow-sm h-full w-full ">
-        <h1 className="text-sm font-bold sm:text-base md:text-xl">{title}</h1>
-        {images !== null ? (
-          <div className="grid grid-cols-2 place-items-center gap-2">
-            {images.map((image, index) => (
-              <div
-                key={index}
-                // style={images.length === 1 ? { aspectRatio: "1/1" } : null}
-                className="cursor-pointer space-y-1 md:space-y-0 h-full"
-              >
-                <img className="w-96" src={image.imageUrl} alt="product" />
-                {image.label && <p className="text-sm">{image.label}</p>}
-              </div>
-            ))}
-          </div>
-        ) : null}
-        <p className="cursor-pointer w-fit text-cyan-800 text-sm hover:underline hover:text-orange-700">
-          {buttonName}
-        </p>
+      {images !== null ? (
+        <div className="flex flex-col justify-between gap-2 bg-white p-4 drop-shadow-sm h-full w-full ">
+          <h1 className=" font-bold text-base md:text-xl">{title}</h1>
 
-        {images === null ? (
-          <button className="sign-in-button bg-yellow-300 w-full p-1.5 rounded-lg text-sm duration-200 hover:bg-yellow-400 ">
-            Sign in securely
-          </button>
-        ) : null}
-      </div>
-      {images === null ? (
-        <div className="ad cursor-pointer overflow-hidden">
-          <img
-            className="object-cover object-center"
-            src="https://images-eu.ssl-images-amazon.com/images/G/31/img16/malar/March23/LR_379X304._SY304_CB595115209_.jpg"
-            alt="img"
-          />
+          {images.length !== 1 ? (
+            <div className="grid grid-cols-2 place-items-center gap-2">
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  className="cursor-pointer space-y-1 md:space-y-0 h-full"
+                >
+                  <img className="w-96" src={image.imageUrl} alt="product" />
+                  {image.label && <p className="text-sm">{image.label}</p>}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <img src={images[0].imageUrl} alt="" />
+          )}
+
+          <p className="cursor-pointer w-fit text-cyan-800 text-sm hover:underline hover:text-orange-700">
+            {buttonName}
+          </p>
         </div>
+      ) : null}
+      {images === null ? (
+        // advertisement
+        <>
+          <div className="p-4 bg-white drop-shadow-sm space-y-8 md:space-y-2">
+            <h1 className="text-xl font-bold">{title}</h1>
+            <button className="sign-in-button bg-yellow-300 w-full p-3 md:p-1.5 rounded-lg text-sm duration-200 hover:bg-yellow-400 ">
+              Sign in securely
+            </button>
+          </div>
+          <div className="cursor-pointer relative">
+            <img
+              className="object-cover object-center"
+              src="https://images-eu.ssl-images-amazon.com/images/G/31/img16/malar/March23/LR_379X304._SY304_CB595115209_.jpg"
+              alt="img"
+            />
+            <p className="absolute -bottom-[5.5%] right-0 z-30 text-[12px] text-gray-500">
+              Sponsored
+            </p>
+          </div>
+        </>
       ) : null}
     </div>
   );

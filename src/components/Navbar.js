@@ -59,7 +59,7 @@ const Navbar = () => {
   return (
     <div className="bg-gray-900 text-white">
       {/* Upper part */}
-      <ul className="nav p-3 flex flex-wrap justify-between items-center gap-4 md:gap-6 md:flex-nowrap whitespace-nowrap 2xl:justify-center 2xl:gap-16">
+      <ul className="nav p-3 flex flex-wrap justify-between items-center gap-4 md:gap-6 md:flex-nowrap whitespace-nowrap 2xl:justify-center">
         <li className="nav-item flex items-center gap-4">
           <button className="hamburger cursor-pointer text-2xl md:hidden">
             <i className="fa-solid fa-bars"></i>
@@ -81,7 +81,7 @@ const Navbar = () => {
           <i className="fa-solid fa-cart-shopping"></i>{" "}
           <span className="hidden md:inline text-base font-bold">Cart</span>{" "}
         </li>
-        <li className="nav-item search flex items-center mx-auto w-full text-black md:order-3 md:mx-4 max-w-2xl">
+        <li className="nav-item search flex items-center mx-auto w-full text-black md:order-3 md:mx-4">
           <select
             defaultValue={selected}
             className="h-10 w-28 hidden lg:block border-2 text-xs rounded-l-md bg-gray-100"
