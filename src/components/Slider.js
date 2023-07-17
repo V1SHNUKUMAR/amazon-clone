@@ -33,7 +33,7 @@ const Slider = (props) => {
           {images.map((image, index) => (
             <SwiperSlide key={index} className="cursor-pointer">
               <img
-                className="  h-[200px] xs:h-[250px] md:h-[400px] object-top object-cover w-full lg:h-auto md:w-full"
+                className="  h-[200px] xs:h-[320px] md:h-[400px] object-top object-cover w-full lg:h-auto md:w-full"
                 src={image.img}
                 alt="sale"
               />

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import amazon_logo_white from "../assets/amazon-full-white.png";
 import indian_flag from "../assets/indian-flag.png";
@@ -51,17 +51,34 @@ const Navbar = () => {
   ];
 
   const [selected, setSelected] = useState(options[0].value);
+  var [isNavOpen, setIsNavOpen] = useState(false);
 
-  const handleOnClick = (e) => {
+  const handleOnClickCategory = (e) => {
     setSelected(e.target.value);
   };
 
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.style.overflow = "hidden";
+      document.body.style.backdropFilter = "brightness(.5)";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+      document.body.style.backdropFilter = "unset";
+    };
+  }, [isNavOpen]);
+
   return (
-    <div className="bg-gray-900 text-white sticky top-0 z-50">
+    <nav className="bg-gray-900 text-white  top-0 z-30">
       {/* Upper part */}
-      <ul className="nav top-0 p-3 flex flex-wrap justify-between items-center gap-4 md:gap-6 md:flex-nowrap whitespace-nowrap 2xl:justify-center">
+      <HamburgerMenu isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+      <ul className="nav p-3 flex flex-wrap justify-between items-center gap-4 md:gap-6 md:flex-nowrap whitespace-nowrap 2xl:justify-center">
         <li className="nav-item flex items-center gap-4">
-          <button className="hamburger cursor-pointer text-2xl md:hidden">
+          <button
+            className="hamburger cursor-pointer text-2xl md:hidden"
+            onClick={() => setIsNavOpen((initialValue) => !initialValue)}
+          >
             <i className="fa-solid fa-bars"></i>
           </button>
           <div className="amazon-logo cursor-pointer mt-1 w-20 md:w-24">
@@ -94,7 +111,7 @@ const Navbar = () => {
                   className="text-base"
                   key={option.value}
                   value={option.value}
-                  onClick={handleOnClick}
+                  onClick={handleOnClickCategory}
                 >
                   {option.value}
                 </option>
@@ -145,7 +162,10 @@ const Navbar = () => {
       {/* lower part */}
       <ul className="flex items-center gap-4 overflow-auto bg-gray-800 px-4 py-3 text-sm whitespace-nowrap 2xl:justify-center 2xl:gap-16">
         <li className="hamburger-all cursor-pointer hidden md:block">
-          <button className="hamburger cursor-pointer text-xl gap-2 flex items-center">
+          <button
+            className="hamburger cursor-pointer text-xl gap-2 flex items-center"
+            onClick={() => setIsNavOpen((initialValue) => !initialValue)}
+          >
             <i className="fa-solid fa-bars"></i>
             <span className="text-sm"> All</span>
           </button>
@@ -161,8 +181,95 @@ const Navbar = () => {
           Prime <i className="fa-solid fa-sort-down text-xs text-gray-400"></i>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 };
 
 export default Navbar;
+
+// hamburger menu
+
+const HamburgerMenu = (props) => {
+  const { isNavOpen, setIsNavOpen } = props;
+  return (
+    <div
+      className={
+        isNavOpen
+          ? "flex h-screen w-screen fixed top-0 left-0 translate-x-0 duration-700 z-50 delay-300"
+          : "flex h-screen w-screen fixed top-0 left-0 -translate-x-full duration-300"
+      }
+    >
+      <div
+        id="transition-layer"
+        className={
+          isNavOpen
+            ? "absolute bg-orange-300/75 z-50 left-0 top-0 h-screen w-screen duration-300 translate-x-full"
+            : "absolute bg-orange-300/75 z-50 left-0 top-0 h-screen w-screen duration-100 delay-300 -translate-x-full"
+        }
+      ></div>
+      <nav className="h-full w-[80%] max-w-[350px] bg-white flex flex-col overflow-auto text-black pb-20">
+        <header className="flex flex-col gap-2 px-5 py-4 bg-gray-800 text-white">
+          <p className="user self-end cursor-pointer flex items-center text-xs gap-1">
+            <span>
+              Sign in <i className="fa-solid fa-chevron-right"></i>
+            </span>
+            <span>
+              <i className="fa-regular fa-user text-xl"></i>
+            </span>
+          </p>
+          <p className="cursor-pointer text-xl w-fit font-semibold">
+            Browse <br />
+            <span className="text-2xl font-normal">Amazon</span>
+          </p>
+        </header>
+        <section>
+          <li className="cursor-pointer flex justify-between items-center px-5 py-5 text-xl font-bold">
+            <span>Amazon Home</span>
+            <i class="fa-solid fa-house"></i>
+          </li>
+          <hr className="border-2" />
+          <ul className="flex flex-col">
+            {/* heading */}
+            <li className="px-5 py-3.5 text-xl font-bold">Trending</li>
+            <li className="px-5 py-3.5 cursor-pointer">Best Sellers</li>
+            <li className="px-5 py-3.5 cursor-pointer">New Releases</li>
+            <li className="px-5 py-3.5 cursor-pointer">Movers and Shakers</li>
+          </ul>
+          <hr className="border-2 mt-2" />
+          <ul className="flex flex-col">
+            {/* heading */}
+            <li className="px-5 py-3.5 text-xl font-bold">
+              Top Categories For You
+            </li>
+            <li className="px-5 py-3.5 cursor-pointer">Mobiles</li>
+            <li className="px-5 py-3.5 cursor-pointer">Computers</li>
+            <li className="px-5 py-3.5 cursor-pointer">Books</li>
+            <li className="px-5 py-3.5 cursor-pointer">Amazon Fashion</li>
+            <li className="px-5 py-3.5 cursor-pointer">See All Categories</li>
+          </ul>
+          <hr className="border-2 mt-2" />
+          <ul className="flex flex-col">
+            {/* heading */}
+            <li className="px-5 py-3.5 text-xl font-bold">
+              Programs & Features
+            </li>
+            <li className="px-5 py-3.5 cursor-pointer">Today's Deals</li>
+            <li className="px-5 py-3.5 cursor-pointer">Amazon Pay</li>
+            <li className="px-5 py-3.5 cursor-pointer">Amazon LaunchPad</li>
+            <li className="px-5 py-3.5 cursor-pointer">Try Prime</li>
+            <li className="px-5 py-3.5 cursor-pointer">Sell on Amazon</li>
+            <li className="px-5 py-3.5 cursor-pointer">Style Feed</li>
+          </ul>
+        </section>
+      </nav>
+      <div
+        className={
+          "h-full flex-1 bg-black/75 text-white text-3xl py-4 text-center transition-colors sm:text-start sm:px-4"
+        }
+        onClick={() => setIsNavOpen((initialValue) => !initialValue)}
+      >
+        <i class="fa-solid fa-xmark cursor-pointer hover:scale-75 duration-300"></i>
+      </div>
+    </div>
+  );
+};
