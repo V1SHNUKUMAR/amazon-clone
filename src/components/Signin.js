@@ -40,7 +40,7 @@ const Signin = (props) => {
               Privacy Notice.
             </span>
           </p>
-          <div className="space-x-2 pt-2 text-sm text-blue-800 cursor-pointer hover:underline hover:text-orange-700">
+          <div className="w-fit space-x-2 pt-2 text-sm text-blue-800 cursor-pointer hover:underline hover:text-orange-700">
             <i class="fa-solid fa-caret-right text-gray-500"></i>
             <span>Need Help?</span>
           </div>
