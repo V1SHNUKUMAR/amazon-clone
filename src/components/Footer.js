@@ -2,9 +2,17 @@ import React from "react";
 import amazon_logo from "../assets/amazon-full-white.png";
 
 const Footer = () => {
+  // To reach the top of page
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="bg-gray-800 body-font text-white">
-      <div className="py-3 cursor-pointer bg-gray-700 hover:bg-gray-600 duration-100 text-center">
+      <div
+        className="py-3 cursor-pointer bg-gray-700 hover:bg-gray-600 duration-100 text-center"
+        onClick={scrollToTop}
+      >
         Back to top
       </div>
       <div className="container px-5 py-10 text-sm mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
@@ -131,7 +139,18 @@ const Footer = () => {
             name="language"
             id="language"
           >
-            <option value="English">English</option>
+            <option className="text-black p-2" value="English">
+              English
+            </option>
+            <option className="text-black p-2" value="Hindi">
+              हिंदी
+            </option>
+            <option className="text-black p-2" value="Punjabi">
+              ਪੰਜਾਬੀ
+            </option>
+            <option className="text-black p-2" value="Marathi">
+              मराठी
+            </option>
           </select>
         </div>
         <ul className="flex justify-center items-center gap-y-1 gap-x-4 flex-wrap mx-auto text-xs max-w-4xl">

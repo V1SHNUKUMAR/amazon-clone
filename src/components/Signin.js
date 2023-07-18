@@ -1,20 +1,78 @@
 import React from "react";
 
-const Signin = () => {
+const Signin = (props) => {
   return (
-    <div className=" bg-white py-10">
-      <div className="flex flex-col justify-center items-center gap-2 border border-gray-300 rounded-md py-6">
-        <p className="text-xs md:text-sm">See personalized recommendations</p>
-        <button className="w-60 bg-amber-300 border border-amber-500 py-1.5 rounded-md font-semibold hover:bg-amber-400 md:text-sm">
-          Sign in
-        </button>
-        <p className="text-xs">
-          New Customer?
-          <span className="cursor-pointer ml-2 text-sky-900 hover:underline">
-            Start here
+    <div className="p-3 pb-0 w-full min-h-[90vh] bg-white">
+      <div className="space-y-2 mx-auto max-w-sm pt-4 pb-10">
+        <form
+          action="#"
+          className="px-4 py-8 border space-y-5 rounded-lg sm:p-7"
+        >
+          <h1 className="text-2xl sm:text-3xl">Sign in</h1>
+          <div className="space-y-1">
+            <label
+              className="font-semibold sm:text-sm"
+              htmlFor="EmailOrPhoneNo"
+            >
+              Email or mobile phone number
+            </label>
+            <input
+              className="w-full border border-gray-500 outline-sky-300 p-2.5 rounded-md sm:text-sm sm:p-1.5 sm:px-2 sm:rounded-sm"
+              type="text"
+              minlength="4"
+              required
+              placeholder="Enter your email or phone number"
+            />
+          </div>
+          <button
+            className="SUBMIT w-full bg-yellow-300 p-2.5 rounded-lg drop-shadow-md hover:bg-yellow-400 transition-colors sm:p-1.5 sm:text-sm"
+            type="submit"
+          >
+            Continue
+          </button>
+          <p className="text-sm sm:leading-5 sm:text-xs">
+            By continuing, you agree to Amazon's{" "}
+            <span className="text-blue-800 cursor-pointer hover:underline hover:text-orange-700">
+              Conditions of Use
+            </span>{" "}
+            and{" "}
+            <span className="text-blue-800 cursor-pointer hover:underline hover:text-orange-700">
+              Privacy Notice.
+            </span>
+          </p>
+          <div className="space-x-2 pt-2 text-sm text-blue-800 cursor-pointer hover:underline hover:text-orange-700">
+            <i class="fa-solid fa-caret-right text-gray-500"></i>
+            <span>Need Help?</span>
+          </div>
+        </form>
+        <div className="flex justify-between items-center gap-4 pt-6 pb-2">
+          <div className="RAY flex-1 border"></div>
+          <span className=" text-gray-500 text-sm sm:text-xs">
+            New to Amazon?{" "}
           </span>
-        </p>
+          <div className="RAY flex-1 border"></div>
+        </div>
+        <button className="bg-white w-full border border-gray-300 p-2.5 text-sm rounded-lg drop-shadow-md hover:bg-gray-50 sm:p-1.5">
+          Create your Amazon Account
+        </button>
       </div>
+      <hr />
+      <footer className="w-full space-y-3 pt-10 pb-32 text-xs bg-gradient-to-r from-white via-gray-50 to-white p-4">
+        <div className="flex justify-center items-center gap-6">
+          <p className="text-blue-800 cursor-pointer hover:underline hover:text-orange-700">
+            Conditions of Use
+          </p>
+          <p className="text-blue-800 cursor-pointer hover:underline hover:text-orange-700">
+            Privacy notice
+          </p>
+          <p className="text-blue-800 cursor-pointer hover:underline hover:text-orange-700">
+            Help
+          </p>
+        </div>
+        <div className="text-center">
+          © 1996-2023, Amazon.com, Inc. or its affiliates
+        </div>
+      </footer>
     </div>
   );
 };

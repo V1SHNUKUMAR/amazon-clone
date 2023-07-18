@@ -1,10 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import amazon_logo_white from "../assets/amazon-full-white.png";
 import indian_flag from "../assets/indian-flag.png";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { amazon_logo_white } = props;
   const options = [
     { value: "All Categories", text: "All Categories" },
     { value: "Alexa Skills", text: "Alexa Skills" },
@@ -60,18 +61,16 @@ const Navbar = () => {
   useEffect(() => {
     if (isNavOpen) {
       document.body.style.overflow = "hidden";
-      document.body.style.backdropFilter = "brightness(.5)";
     }
-
     return () => {
       document.body.style.overflow = "unset";
-      document.body.style.backdropFilter = "unset";
     };
   }, [isNavOpen]);
 
   return (
     <nav className="bg-gray-900 text-white  top-0 z-30">
       {/* Upper part */}
+
       <HamburgerMenu isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
       <ul className="nav p-3 flex flex-wrap justify-between items-center gap-4 md:gap-6 md:flex-nowrap whitespace-nowrap 2xl:justify-center">
         <li className="nav-item flex items-center gap-4">
@@ -81,18 +80,26 @@ const Navbar = () => {
           >
             <i className="fa-solid fa-bars"></i>
           </button>
-          <div className="amazon-logo cursor-pointer mt-1 w-20 md:w-24">
+          <Link
+            to={"/"}
+            className="amazon-logo cursor-pointer mt-1 w-20 md:w-24"
+          >
             <img className="h-full" src={amazon_logo_white} alt="amazon.in" />
-          </div>
+          </Link>
         </li>
         <li className="flex-1 md:hidden"></li>
-        <li className="user cursor-pointer flex items-center text-xs gap-1 md:order-5">
-          <span>
-            Sign in <i className="fa-solid fa-chevron-right"></i>
-          </span>
-          <span>
-            <i className="fa-regular fa-user text-xl"></i>
-          </span>
+        <li className="md:order-5">
+          <Link
+            to={"/signIn"}
+            className="user cursor-pointer flex items-center text-xs gap-1 "
+          >
+            <span>
+              Sign in <i className="fa-solid fa-chevron-right"></i>
+            </span>
+            <span>
+              <i className="fa-regular fa-user text-xl"></i>
+            </span>
+          </Link>
         </li>
         <li className="cart cursor-pointer text-xl md:order-7">
           <i className="fa-solid fa-cart-shopping"></i>{" "}
@@ -195,18 +202,10 @@ const HamburgerMenu = (props) => {
     <div
       className={
         isNavOpen
-          ? "flex h-screen w-screen fixed top-0 left-0 translate-x-0 duration-700 z-50 delay-300"
-          : "flex h-screen w-screen fixed top-0 left-0 -translate-x-full duration-300"
+          ? "flex h-screen w-screen fixed top-0 left-0 translate-x-0 duration-500 z-50"
+          : "flex h-screen w-screen fixed top-0 left-0 -translate-x-full duration-500 z-50"
       }
     >
-      <div
-        id="transition-layer"
-        className={
-          isNavOpen
-            ? "absolute bg-orange-300/75 z-50 left-0 top-0 h-screen w-screen duration-300 translate-x-full"
-            : "absolute bg-orange-300/75 z-50 left-0 top-0 h-screen w-screen duration-100 delay-300 -translate-x-full"
-        }
-      ></div>
       <nav className="h-full w-[80%] max-w-[350px] bg-white flex flex-col overflow-auto text-black pb-20">
         <header className="flex flex-col gap-2 px-5 py-4 bg-gray-800 text-white">
           <p className="user self-end cursor-pointer flex items-center text-xs gap-1">
@@ -264,7 +263,9 @@ const HamburgerMenu = (props) => {
       </nav>
       <div
         className={
-          "h-full flex-1 bg-black/75 text-white text-3xl py-4 text-center transition-colors sm:text-start sm:px-4"
+          isNavOpen
+            ? "h-full flex-1 bg-black/75 text-white text-3xl py-4 text-center delay-500 opacity-100 transition-opacity duration-75 sm:text-start sm:px-4"
+            : "h-full flex-1 bg-black/75 text-white text-3xl py-4 text-center opacity-0 sm:text-start sm:px-4"
         }
         onClick={() => setIsNavOpen((initialValue) => !initialValue)}
       >
