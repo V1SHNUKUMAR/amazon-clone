@@ -3,6 +3,8 @@
 import React from "react";
 import ProductSlider from "./ProductSlider";
 import Footer from "./Footer";
+import SigninSuggestion from "./SigninSuggestion";
+import { Link } from "react-router-dom";
 
 const HomescreenGrid = () => {
   const grid_1ItemsData = [
@@ -601,7 +603,7 @@ const HomescreenGrid = () => {
         </div>
       </div>
       {/* SignIn component */}
-      <Signin />
+      <SigninSuggestion />
       {/* footer */}
       <Footer />
     </div>
@@ -644,11 +646,13 @@ const GridItem = (props) => {
       {images === null ? (
         // advertisement
         <>
-          <div className="p-4 bg-white drop-shadow-sm space-y-8 md:space-y-2">
-            <h1 className="text-xl font-bold">{title}</h1>
-            <button className="sign-in-button bg-yellow-300 w-full p-3 md:p-1.5 rounded-lg text-sm duration-200 hover:bg-yellow-400 ">
-              Sign in securely
-            </button>
+          <div className="p-4 bg-white drop-shadow-sm">
+            <h1 className="text-xl font-bold leading-6 mb-3">{title}</h1>
+            <Link to={"/signIn"}>
+              <button className="sign-in-button bg-yellow-300 w-full p-3 md:p-1.5 rounded-lg text-sm duration-200 hover:bg-yellow-400 ">
+                Sign in securely
+              </button>
+            </Link>
           </div>
           <div className="cursor-pointer relative">
             <img
@@ -662,26 +666,6 @@ const GridItem = (props) => {
           </div>
         </>
       ) : null}
-    </div>
-  );
-};
-
-// signIn section component
-const Signin = () => {
-  return (
-    <div className=" bg-white py-10">
-      <div className="flex flex-col justify-center items-center gap-2 border border-gray-300 rounded-md py-6">
-        <p className="text-xs md:text-sm">See personalized recommendations</p>
-        <button className="w-60 bg-amber-300 border border-amber-500 py-1.5 drop-shadow-md rounded-md font-semibold hover:bg-amber-400 md:text-sm">
-          Sign in
-        </button>
-        <p className="text-xs">
-          New Customer?
-          <span className="cursor-pointer ml-2 text-sky-900 hover:underline">
-            Start here
-          </span>
-        </p>
-      </div>
     </div>
   );
 };

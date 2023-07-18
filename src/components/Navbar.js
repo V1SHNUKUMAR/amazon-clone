@@ -70,9 +70,10 @@ const Navbar = (props) => {
   return (
     <nav className="bg-gray-900 text-white  top-0 z-30">
       {/* Upper part */}
-
+      {/* MOBILE MENU */}
       <HamburgerMenu isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
-      <ul className="nav p-3 flex flex-wrap justify-between items-center gap-4 md:gap-6 md:flex-nowrap whitespace-nowrap 2xl:justify-center">
+      {/*  */}
+      <ul className="nav px-3 py-2.5 flex flex-wrap justify-between items-center gap-4 md:gap-6 md:flex-nowrap md:px-6  whitespace-nowrap 2xl:justify-center">
         <li className="nav-item flex items-center gap-4">
           <button
             className="hamburger cursor-pointer text-2xl md:hidden"
@@ -102,13 +103,15 @@ const Navbar = (props) => {
           </Link>
         </li>
         <li className="cart cursor-pointer text-xl md:order-7">
-          <i className="fa-solid fa-cart-shopping"></i>{" "}
-          <span className="hidden md:inline text-base font-bold">Cart</span>{" "}
+          <Link to={"/cartScreen"}>
+            <i className="fa-solid fa-cart-shopping"></i>{" "}
+            <span className="hidden md:inline text-base font-bold">Cart</span>{" "}
+          </Link>
         </li>
-        <li className="nav-item search flex items-center mx-auto w-full text-black md:order-3 md:mx-4">
+        <li className="nav-item search flex items-center mx-auto w-full text-black md:order-3 md:mx-3">
           <select
             defaultValue={selected}
-            className="h-10 w-28 hidden lg:block border-2 text-xs rounded-l-md bg-gray-100"
+            className="h-10 w-28 hidden lg:block border-2 text-xs rounded-l-md bg-gray-100 text-gray-700"
             name="main-dropdown"
             id="main-dropdown"
           >
@@ -142,7 +145,7 @@ const Navbar = (props) => {
           <div className="text-xl">
             <i className="fa-solid fa-location-dot"></i>
           </div>
-          <div className="space-y-0 gap-y-0-0">
+          <div className="space-y-0 leading-5">
             <div className="upper text-gray-400 text-xs">Select your</div>
             <div className="lower font-bold">Location</div>
           </div>
@@ -160,14 +163,14 @@ const Navbar = (props) => {
           </div>
         </li>
         <li className="nav-item returns cursor-pointer md:order-6">
-          <div className="space-y-0 gap-y-0-0">
+          <div className="space-y-0 leading-5">
             <div className="upper text-start text-xs">Returns</div>
             <div className="lower font-bold">& Orders</div>
           </div>
         </li>
       </ul>
       {/* lower part */}
-      <ul className="flex items-center gap-4 overflow-auto bg-gray-800 px-4 py-3 text-sm whitespace-nowrap 2xl:justify-center 2xl:gap-16">
+      <ul className="flex items-center gap-4 overflow-auto bg-gray-800 px-4 py-2.5 text-sm whitespace-nowrap 2xl:justify-center 2xl:gap-16">
         <li className="hamburger-all cursor-pointer hidden md:block">
           <button
             className="hamburger cursor-pointer text-xl gap-2 flex items-center"
@@ -208,17 +211,30 @@ const HamburgerMenu = (props) => {
     >
       <nav className="h-full w-[80%] max-w-[350px] bg-white flex flex-col overflow-auto text-black pb-20">
         <header className="flex flex-col gap-2 px-5 py-4 bg-gray-800 text-white">
-          <p className="user self-end cursor-pointer flex items-center text-xs gap-1">
-            <span>
-              Sign in <i className="fa-solid fa-chevron-right"></i>
-            </span>
-            <span>
-              <i className="fa-regular fa-user text-xl"></i>
-            </span>
+          <p className="user self-end">
+            <Link
+              to={"/signIn"}
+              className="cursor-pointer flex items-center text-xs gap-1"
+              onClick={() => setIsNavOpen((initialValue) => !initialValue)}
+            >
+              {" "}
+              <span>
+                Sign in <i className="fa-solid fa-chevron-right"></i>
+              </span>
+              <span>
+                <i className="fa-regular fa-user text-xl"></i>
+              </span>
+            </Link>
           </p>
           <p className="cursor-pointer text-xl w-fit font-semibold">
-            Browse <br />
-            <span className="text-2xl font-normal">Amazon</span>
+            <Link
+              to={"/"}
+              onClick={() => setIsNavOpen((initialValue) => !initialValue)}
+            >
+              {" "}
+              Browse <br />
+              <span className="text-2xl font-normal">Amazon</span>
+            </Link>
           </p>
         </header>
         <section>
