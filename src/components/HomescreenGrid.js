@@ -623,16 +623,22 @@ const GridItem = (props) => {
           <h1 className=" font-bold text-base md:text-xl">{title}</h1>
 
           {images.length !== 1 ? (
-            <div className="grid grid-cols-2 place-items-center gap-2">
-              {images.map((image, index) => (
-                <div
-                  key={index}
-                  className="cursor-pointer space-y-1 md:space-y-0 h-full"
-                >
-                  <img className="w-96" src={image.imageUrl} alt="product" />
-                  {image.label && <p className="text-sm">{image.label}</p>}
-                </div>
-              ))}
+            <div>
+              <Link
+                to={"/products-listing-page"}
+                className="grid grid-cols-2 place-items-center gap-2"
+              >
+                {" "}
+                {images.map((image, index) => (
+                  <div
+                    key={index}
+                    className="cursor-pointer space-y-1 md:space-y-0 h-full"
+                  >
+                    <img className="w-96" src={image.imageUrl} alt="product" />
+                    {image.label && <p className="text-sm">{image.label}</p>}
+                  </div>
+                ))}
+              </Link>
             </div>
           ) : (
             <img src={images[0].imageUrl} alt="" />
@@ -648,7 +654,7 @@ const GridItem = (props) => {
         <>
           <div className="p-4 bg-white drop-shadow-sm">
             <h1 className="text-xl font-bold leading-6 mb-3">{title}</h1>
-            <Link to={"/signIn"}>
+            <Link to={"/sign-in"}>
               <button className="sign-in-button bg-yellow-300 w-full p-3 md:p-1.5 rounded-lg text-sm duration-200 hover:bg-yellow-400 ">
                 Sign in securely
               </button>

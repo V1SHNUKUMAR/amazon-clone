@@ -1,0 +1,184 @@
+{
+    "allProducts": [
+        {
+            "title": "Track Pant for Men || Track Pants || Lycra Full Elastic Jogger Track Pant (TP-01-04)",
+            "imgUrl": "https://m.media-amazon.com/images/I/61fjEgDFgkL._UY741_.jpg",
+            "price": "349",
+            "MRP": "3999",
+            "ID": "mensClothing1",
+            "category": "clothing",
+            "subCategory": "mensClothing"
+        },
+        {
+            "title": "UNIBLISS Men's Casual Shirt Printed Rayon Halfsleeve",
+            "imgUrl": "https://m.media-amazon.com/images/I/61nEvk4HEdL._UX569_.jpg",
+            "price": "499",
+            "MRP": "999",
+            "ID": "mensClothing2",
+            "category": "clothing",
+            "subCategory": "mensClothing"
+        },
+        {
+            "title": "DHRUVI TRENDZ Shirt for Men || Opaqu Cotton Shirts for Men || Regular Fit Solid Shirts for Men || Spread Collar & Half Sleeve Shirt || Casual, Office Wear Shirt for Men.",
+            "imgUrl": "https://m.media-amazon.com/images/I/61E+biE5SIL._UY741_.jpg",
+            "price": "279",
+            "MRP": "1999",
+            "ID": "mensClothing3",
+            "category": "clothing",
+            "subCategory": "mensClothing"
+        },
+        {
+            "title": "M ZONE Men's Rayon Lining Digital Printed Stitched Half Sleeve ShirtCasual Shirts New",
+            "imgUrl": "https://m.media-amazon.com/images/I/4186El61cEL.jpg",
+            "price": "433",
+            "MRP": "999",
+            "ID": "mensClothing4",
+            "category": "clothing",
+            "subCategory": "mensClothing"
+        },
+        {
+            "title": "Alan Jones Clothing Men's Cotton Hooded Neck Hoodies",
+            "imgUrl": "https://m.media-amazon.com/images/I/716-zljdqBL._UX679_.jpg",
+            "price": "699",
+            "MRP": "1999",
+            "ID": "womensClothing5",
+            "category": "clothing",
+            "subCategory": "mensClothing"
+        },
+        {
+            "title": "Fabricorn Stylish Plain Green Long Sleeve Cotton Tshirt for Women (Green)",
+            "imgUrl": "https://m.media-amazon.com/images/I/71bxu0tQh1L._UY741_.jpg",
+            "price": "429",
+            "MRP": "1199",
+            "ID": "womensClothing6",
+            "category": "clothing",
+            "subCategory": "womensClothing"
+        },
+        {
+            "title": "Lymio Dresses for Women Multi Color Women Dress (491-524)",
+            "imgUrl": "https://m.media-amazon.com/images/I/71U0Wo-rizL._UY741_.jpg",
+            "price": "499",
+            "MRP": "1499",
+            "ID": "womensClothing7",
+            "category": "clothing",
+            "subCategory": "womensClothing"
+        },
+        {
+            "title": "GoSriKi Women Kurta and Palazzo",
+            "imgUrl": "https://m.media-amazon.com/images/I/718zrjqofQL._UY741_.jpg",
+            "price": "469",
+            "MRP": "2599",
+            "ID": "womensClothing8",
+            "category": "clothing",
+            "subCategory": "womensClothing"
+        },
+        {
+            "title": "Bold N Elegant Full Sleeve Cotton Fun Cute Cartoon Jungle Animal Tshirt & Pajama PJ Pant Clothing Set for Infant Toddler Baby Boy Girl Kids",
+            "imgUrl": "https://m.media-amazon.com/images/I/51Nma4M8rLL._UX679_.jpg",
+            "price": "499",
+            "MRP": "1999",
+            "ID": "kidsClothing9",
+            "category": "clothing",
+            "subCategory": "kidsClothing"
+        },
+        {
+            "title": "Bold N Elegant - Be Bold Inside & Elegant Outside Unisex-Child Cotton T-Shirt And Shorts Clothing Set",
+            "imgUrl": "https://m.media-amazon.com/images/I/512Fau61yGL._UX679_.jpg",
+            "price": "579",
+            "MRP": "1999",
+            "ID": "kidsClothing10",
+            "category": "clothing",
+            "subCategory": "kidsClothing"
+        },
+        {
+            "title": "Googo Gaaga Boy's Cotton Full Sleeves Printed Sweatshirt and Pant Set in Multi Color",
+            "imgUrl": "https://m.media-amazon.com/images/I/517+8nArL8L._UX679_.jpg",
+            "price": "644",
+            "MRP": "1750",
+            "ID": "kidsClothing11",
+            "category": "clothing",
+            "subCategory": "kidsClothing"
+        },
+        {
+            "title": "OMLI Baby Girl Dress Toddler Dress Long Sleeve Infant Casual Dress Ruffle Print Clothes Baby Girls Clothing",
+            "imgUrl": "https://m.media-amazon.com/images/I/517h+EN1EcL._UX679_.jpg",
+            "price": "497",
+            "MRP": "999",
+            "ID": "kidsClothing12",
+            "category": "clothing",
+            "subCategory": "kidsClothing"
+        },
+        {
+            "title": "Apple iPhone 14 Pro Max (1 TB) - Silver",
+            "imgUrl": "https://m.media-amazon.com/images/I/61nzPMNY8zL._SX679_.jpg",
+            "price": "172990",
+            "MRP": "189900",
+            "ID": "mobiles13",
+            "category": "mobiles",
+            "subCategory": "mobiles"
+        },
+        {
+            "title": "realme narzo 60 5G (Mars Orange,8GB+256GB) | 90Hz Super AMOLED Display | Ultra Premium Vegan Leather Design | with 33W SUPERVOOC Charger",
+            "imgUrl": "https://m.media-amazon.com/images/I/81SvInWFWWL._SX569_.jpg",
+            "price": "19999",
+            "MRP": "20999",
+            "ID": "mobiles14",
+            "category": "mobiles",
+            "subCategory": "mobiles"
+        },
+        {
+            "title": "Samsung Galaxy Note10+ (Aura Black, 12GB RAM, 256GB Storage)",
+            "imgUrl": "https://m.media-amazon.com/images/I/71QIWoR7EZL._SX569_.jpg",
+            "price": "54740",
+            "MRP": "99999",
+            "ID": "mobiles15",
+            "category": "mobiles",
+            "subCategory": "mobiles"
+        },
+        {
+            "title": "iQOO 9 SE 5G (Space Fusion, 12GB RAM, 256GB Storage) | Qualcomm Snapdragon 888 | 66W Flash Charge",
+            "imgUrl": "https://m.media-amazon.com/images/I/618gFHEnXUL._SX569_.jpg",
+            "price": "33990",
+            "MRP": "44990",
+            "ID": "mobiles16",
+            "category": "mobiles",
+            "subCategory": "mobiles"
+        },
+        {
+            "title": "EvoFox Katana Pro RGB Mechanical Keyboard with Silent Outemu Red Switches | 16 Million True Prism RGB | Powerful Software | 4 Game Modes Presets | 16 Lighting Effects | TKL Keyboard | On Board Memory | Braided Cable with EMI Ring (Red + Black)",
+            "imgUrl": "https://m.media-amazon.com/images/I/61XmAscW1NL._SY450_.jpg",
+            "price": "2499",
+            "MRP": "3499",
+            "ID": "computerGadgets17",
+            "category": "computerGadgets",
+            "subCategory": "computerGadgets"
+        },
+        {
+            "title": "Redgear Cloak Wired RGB Wired Over Ear Gaming Headphones with Mic for PC",
+            "imgUrl": "https://m.media-amazon.com/images/I/61O0rXhhP6L._SX679_.jpg",
+            "price": "499",
+            "MRP": "1799",
+            "ID": "computerGadgets18",
+            "category": "computerGadgets",
+            "subCategory": "computerGadgets"
+        },
+        {
+            "title": "STRIFF Adjustable Laptop Tabletop Stand Patented Riser Ventilated Portable Foldable Compatible with MacBook Notebook Tablet Tray Desk Table Book with Free Phone Stand (Black)",
+            "imgUrl": "https://m.media-amazon.com/images/I/71Zf9uUp+GL._SX679_.jpg",
+            "price": "349",
+            "MRP": "1499",
+            "ID": "computerGadgets19",
+            "category": "computerGadgets",
+            "subCategory": "computerGadgets"
+        },
+        {
+            "title": "ZEBRONICS Zeb Wonderbar 10 USB Powered 2.0 Computer Speaker with RGB Lights",
+            "imgUrl": "https://m.media-amazon.com/images/I/81pFzHKGuXL._SX679_.jpg",
+            "price": "699",
+            "MRP": "1499",
+            "ID": "computerGadgets20",
+            "category": "computerGadgets",
+            "subCategory": "computerGadgets"
+        }
+    ]
+}

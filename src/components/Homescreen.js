@@ -10,6 +10,8 @@ import img5 from "../assets/slider/5.jpg";
 import img6 from "../assets/slider/6.jpg";
 import HomescreenGrid from "./HomescreenGrid";
 
+import { useEffect } from "react";
+
 const Homescreen = () => {
   const images = [
     { img: img1, imgUrl: "../assets/slider/1.jpg" },
@@ -19,6 +21,10 @@ const Homescreen = () => {
     { img: img5, imgUrl: "../assets/slider/5.jpg" },
     { img: img6, imgUrl: "../assets/slider/6.jpg" },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <div className="relative max-w-[1500px] mx-auto">

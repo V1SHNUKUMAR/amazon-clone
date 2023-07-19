@@ -27,8 +27,8 @@ const ProductSlider = (props) => {
         modules={[Navigation]}
         className="mySwiper"
       >
-        {allProductsData.map((product) => (
-          <SwiperSlide style={{ width: "auto" }}>
+        {allProductsData.map((product, index) => (
+          <SwiperSlide key={index} style={{ width: "auto" }}>
             <Slide
               image={product.imageUrl}
               off={product.off}

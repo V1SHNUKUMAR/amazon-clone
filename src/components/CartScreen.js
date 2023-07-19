@@ -1,7 +1,12 @@
 import React from "react";
 import Footer from "./Footer";
+import { useEffect } from "react";
 
 const CartScreen = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <div className="w-full ">
       <div className="max-w-[1400px] mx-auto">
@@ -19,24 +24,43 @@ export default CartScreen;
 
 const ShoppingCart = (props) => {
   //   const { productsList } = props;
-  const productsList = ["1", "23", "3"];
+  const productsList = [
+    "https://m.media-amazon.com/images/I/71sTY2XLBeL._AC_AA180_.jpg",
+    "https://m.media-amazon.com/images/I/51COhKQY9iL._AC_AA180_.jpg",
+  ];
+  // const productsList = [];
 
   return (
-    <div className="md:w-3/4">
+    <div className="md:w-4/6 lg:w-3/4">
       <div className="PRODUCTS border-2 px-3 py-5 bg-white md:px-6">
-        <h1 className="text-2xl px-2 md:text-3xl">Shopping Cart</h1>
+        <h1 className="text-2xl px-2 md:text-3xl">
+          {productsList.length !== 0
+            ? "Shopping Cart"
+            : "Your Amazon Cart is empty."}
+        </h1>
         <p className="text-sm mt-1 px-2 text-sky-700 cursor-pointer hover:underline hover:text-orange-700">
           Deselect All Items
         </p>
         <hr className="border-gray-300" />
         {productsList.length !== 0 ? (
           <div className="PRODUCTS divide-y py-2">
-            {productsList.map((product) => (
-              <CartProduct />
+            {productsList.map((product, index) => (
+              <div key={index}>
+                {" "}
+                <CartProduct imgUrl={product} />{" "}
+              </div>
             ))}{" "}
           </div>
         ) : (
-          <div className="EMPTY_CART p-4">No Products</div>
+          <div className="EMPTY_CART p-4 text-center flex flex-col gap-4 items-center justify-center min-h-[300px]">
+            <h2>Browse Amazon for best deals and accessories</h2>
+            <button
+              className="SUBMIT px-6 bg-yellow-300 py-2 rounded-lg drop-shadow-md hover:bg-yellow-400 transition-colors sm:py-1.5 sm:text-sm"
+              type="submit"
+            >
+              Go to HomeScreen
+            </button>
+          </div>
         )}
 
         <hr className="border-gray-300" />
@@ -58,8 +82,8 @@ const ShoppingCart = (props) => {
 const TotalAmount = () => {
   return (
     <div className="TOTAL-AMOUNT flex-1 border-2 bg-white p-5 space-y-4 md:py-6 md:space-y-8 ">
-      <div className="flex items-center gap-2 text-green-700 text-sm">
-        <i class="fa-solid fa-circle-check text-2xl"></i>
+      <div className="flex gap-2 text-green-700 text-sm">
+        <i className="fa-solid fa-circle-check text-xl"></i>
         <div>
           <span>Your order is eligible for FREE Delivery</span>
           <div className="text-black">
@@ -88,20 +112,20 @@ const TotalAmount = () => {
 };
 
 const CartProduct = (props) => {
-  const imgUrl =
-    "https://m.media-amazon.com/images/I/71sTY2XLBeL._AC_AA180_.jpg";
+  const { imgUrl } = props;
+
   return (
     <div className="px-2 py-3 flex items-center justify-start gap-4 md:gap-6">
       <input type="checkbox" value={"selectProduct"} name="selectProduct" />
       <label className="flex gap-3 md:gap-10">
         <img className="w-24 object-contain md:w-40" src={imgUrl} alt="" />
         <div className="text-sm space-y-1">
-          <h2 className=" line-clamp-2 text-base leading-5 max-w-md md:text-lg md:font-semibold">
+          <h2 className=" line-clamp-3 text-base leading-5 max-w-md md:text-lg md:leading-6 md:line-clamp-2">
             Fire-Boltt Dagger Luxe 1.43" Super AMOLED Display Luxury Smartwatch,
             Stainless Steel Build, 600 NITS Brightness with Single BT Bluetooth
             Connection, IP68, Dual Button Technology (Stainless Black)
           </h2>
-          <div className="flex items-center flex-wrap gap-3 text-xs">
+          <div className="PRICE flex items-center flex-wrap gap-3 text-xs">
             <h3>
               &#8377; <span className="font-bold text-base">3,499.00</span>
             </h3>
@@ -112,29 +136,36 @@ const CartProduct = (props) => {
               </span>
             </h4>
           </div>
-          <p>In stock</p>
-          <p>Eligible for FREE Shipping</p>
+          <p className="text-green-700 text-xs">In stock</p>
+          <p className="text-gray-600 text-xs">Eligible for FREE Shipping</p>
           <img
-            className="w-16 object-contain"
+            className="w-16 object-contain py-1"
             src="https://m.media-amazon.com/images/G/31/marketing/fba/fba-badge_18px._CB485936079_.png"
             alt=""
           />
-          <div className="GIFTCHECK flex items-start gap-2">
-            <input type="checkbox" name="giftCheck" id="giftCheck" />
-            <label htmlFor="giftCheck">
-              This is a gift{" "}
-              <span className="text-sky-700 cursor-pointer hover:underline hover:text-orange-700">
-                Learn more
-              </span>
-            </label>
-          </div>
+          {/* <div className="GIFTORNOT flex items-center gap-2 w-fit">
+            <input type="checkbox" id={imgUrl} />
+            <label htmlFor={imgUrl}>This is a gift </label>
+            <div className="text-sky-700 cursor-pointer hover:underline hover:text-orange-700">
+              Learn more
+            </div>
+          </div> */}
           <div className="flex items-center gap-2 flex-wrap divide-x">
-            <select className="px-4" name="QTY" id="qty">
+            <select
+              className="px-2 py-0.5 border border-gray-300 bg-gray-100 rounded-md drop-shadow-md"
+              name="QTY"
+              id="qty"
+            >
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10+</option>
             </select>
             <p className="px-4 text-sky-700 cursor-pointer hover:underline hover:text-orange-700">
               Delete

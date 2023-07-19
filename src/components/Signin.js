@@ -1,11 +1,21 @@
 import React from "react";
+import { useEffect } from "react";
 
 const Signin = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="p-3 pb-0 w-full min-h-[90vh] bg-white">
       <div className="space-y-2 mx-auto max-w-sm pt-4 pb-10">
         <form
-          action="#"
+          action=""
+          onSubmit={handleSubmit}
           className="px-4 py-8 border space-y-5 rounded-lg sm:p-7"
         >
           <h1 className="text-2xl sm:text-3xl">Sign in</h1>
@@ -19,7 +29,7 @@ const Signin = (props) => {
             <input
               className="w-full border border-gray-500 outline-sky-300 p-2.5 rounded-md sm:text-sm sm:p-1.5 sm:px-2 sm:rounded-sm"
               type="text"
-              minlength="4"
+              minLength="4"
               required
               placeholder="Enter your email or phone number"
             />
@@ -41,7 +51,7 @@ const Signin = (props) => {
             </span>
           </p>
           <div className="w-fit space-x-2 pt-2 text-sm text-blue-800 cursor-pointer hover:underline hover:text-orange-700">
-            <i class="fa-solid fa-caret-right text-gray-500"></i>
+            <i className="fa-solid fa-caret-right text-gray-500"></i>
             <span>Need Help?</span>
           </div>
         </form>

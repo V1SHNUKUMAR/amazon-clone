@@ -91,7 +91,7 @@ const Navbar = (props) => {
         <li className="flex-1 md:hidden"></li>
         <li className="md:order-5">
           <Link
-            to={"/signIn"}
+            to={"/sign-in"}
             className="user cursor-pointer flex items-center text-xs gap-1 "
           >
             <span>
@@ -103,7 +103,7 @@ const Navbar = (props) => {
           </Link>
         </li>
         <li className="cart cursor-pointer text-xl md:order-7">
-          <Link to={"/cartScreen"}>
+          <Link to={"/cart-screen"}>
             <i className="fa-solid fa-cart-shopping"></i>{" "}
             <span className="hidden md:inline text-base font-bold">Cart</span>{" "}
           </Link>
@@ -213,7 +213,7 @@ const HamburgerMenu = (props) => {
         <header className="flex flex-col gap-2 px-5 py-4 bg-gray-800 text-white">
           <p className="user self-end">
             <Link
-              to={"/signIn"}
+              to={"/sign-in"}
               className="cursor-pointer flex items-center text-xs gap-1"
               onClick={() => setIsNavOpen((initialValue) => !initialValue)}
             >
@@ -240,7 +240,7 @@ const HamburgerMenu = (props) => {
         <section>
           <li className="cursor-pointer flex justify-between items-center px-5 py-5 text-xl font-bold">
             <span>Amazon Home</span>
-            <i class="fa-solid fa-house"></i>
+            <i className="fa-solid fa-house"></i>
           </li>
           <hr className="border-2" />
           <ul className="flex flex-col">
@@ -285,7 +285,7 @@ const HamburgerMenu = (props) => {
         }
         onClick={() => setIsNavOpen((initialValue) => !initialValue)}
       >
-        <i class="fa-solid fa-xmark cursor-pointer hover:scale-75 duration-300"></i>
+        <i className="fa-solid fa-xmark cursor-pointer hover:scale-75 duration-300"></i>
       </div>
     </div>
   );
