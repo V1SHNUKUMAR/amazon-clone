@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+
 import Footer from "./Footer";
-import { useEffect } from "react";
+import globalContext from "../context/globalContext";
 
 const CartScreen = () => {
+  const context = useContext(globalContext);
+  const { productsList } = context;
   useEffect(() => {
     window.scrollTo(0, 0);
   });
 
   return (
     <div className="w-full ">
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1500px] mx-auto">
         <div className="CONTENT p-2 flex flex-wrap-reverse gap-2 justify-center items-start md:gap-4 md:px-4 md:py-6 md:flex-nowrap">
-          <ShoppingCart />
+          <ShoppingCart productsList={productsList} />
           <TotalAmount />
         </div>
       </div>
@@ -23,11 +26,11 @@ const CartScreen = () => {
 export default CartScreen;
 
 const ShoppingCart = (props) => {
-  //   const { productsList } = props;
-  const productsList = [
-    "https://m.media-amazon.com/images/I/71sTY2XLBeL._AC_AA180_.jpg",
-    "https://m.media-amazon.com/images/I/51COhKQY9iL._AC_AA180_.jpg",
-  ];
+  const { productsList } = props;
+  // const productsList = [
+  //   "https://m.media-amazon.com/images/I/71sTY2XLBeL._AC_AA180_.jpg",
+  //   "https://m.media-amazon.com/images/I/51COhKQY9iL._AC_AA180_.jpg",
+  // ];
   // const productsList = [];
 
   return (
@@ -47,7 +50,7 @@ const ShoppingCart = (props) => {
             {productsList.map((product, index) => (
               <div key={index}>
                 {" "}
-                <CartProduct imgUrl={product} />{" "}
+                <CartProduct product={product} />{" "}
               </div>
             ))}{" "}
           </div>
@@ -112,27 +115,30 @@ const TotalAmount = () => {
 };
 
 const CartProduct = (props) => {
-  const { imgUrl } = props;
+  const { product } = props;
 
   return (
     <div className="px-2 py-3 flex items-center justify-start gap-4 md:gap-6">
       <input type="checkbox" value={"selectProduct"} name="selectProduct" />
       <label className="flex gap-3 md:gap-10">
-        <img className="w-24 object-contain md:w-40" src={imgUrl} alt="" />
+        <img
+          className="w-24 object-contain md:w-40"
+          src={product.imgUrl}
+          alt=""
+        />
         <div className="text-sm space-y-1">
           <h2 className=" line-clamp-3 text-base leading-5 max-w-md md:text-lg md:leading-6 md:line-clamp-2">
-            Fire-Boltt Dagger Luxe 1.43" Super AMOLED Display Luxury Smartwatch,
-            Stainless Steel Build, 600 NITS Brightness with Single BT Bluetooth
-            Connection, IP68, Dual Button Technology (Stainless Black)
+            {product.title}
           </h2>
           <div className="PRICE flex items-center flex-wrap gap-3 text-xs">
             <h3>
-              &#8377; <span className="font-bold text-base">3,499.00</span>
+              &#8377;{" "}
+              <span className="font-bold text-base">{product.price}</span>
             </h3>
             <h4>
               M.R.P.:{" "}
               <span className="line-through text-gray-500">
-                &#8377; 21,000.00
+                &#8377; {product.MRP}
               </span>
             </h4>
           </div>

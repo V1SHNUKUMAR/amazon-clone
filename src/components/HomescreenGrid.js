@@ -641,12 +641,18 @@ const GridItem = (props) => {
               </Link>
             </div>
           ) : (
-            <img src={images[0].imageUrl} alt="" />
+            <Link to={"/products-listing-page"}>
+              {" "}
+              <img src={images[0].imageUrl} alt="" />
+            </Link>
           )}
 
-          <p className="cursor-pointer w-fit text-cyan-800 text-sm hover:underline hover:text-orange-700">
-            {buttonName}
-          </p>
+          <Link to={"/products-listing-page"}>
+            {" "}
+            <p className="cursor-pointer w-fit text-cyan-800 text-sm hover:underline hover:text-orange-700">
+              {buttonName}
+            </p>
+          </Link>
         </div>
       ) : null}
       {images === null ? (
@@ -660,16 +666,19 @@ const GridItem = (props) => {
               </button>
             </Link>
           </div>
-          <div className="cursor-pointer relative">
-            <img
-              className="object-cover object-center"
-              src="https://images-eu.ssl-images-amazon.com/images/G/31/img16/malar/March23/LR_379X304._SY304_CB595115209_.jpg"
-              alt="img"
-            />
-            <p className="absolute -bottom-[5.5%] right-0 z-30 text-[12px] text-gray-500">
-              Sponsored
-            </p>
-          </div>
+          <Link to={"/products-listing-page"}>
+            {" "}
+            <div className="relative">
+              <img
+                className="object-cover object-center"
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img16/malar/March23/LR_379X304._SY304_CB595115209_.jpg"
+                alt="img"
+              />
+              <p className="absolute -bottom-[5.5%] right-0 z-30 text-[12px] text-gray-500">
+                Sponsored
+              </p>
+            </div>
+          </Link>
         </>
       ) : null}
     </div>

@@ -51,13 +51,15 @@ const Slide = (props) => {
 
   return (
     <div className="cursor-pointer flex flex-col gap-2 h-full w-fit md:min-w-[190px] max-w-[190px] xs:max-w-[250px]">
-      <div className="p-2 h-48">
-        <img
-          className="mx-auto object-center object-contain max-h-full"
-          src={image}
-          alt="product"
-        />
-      </div>
+      {image !== undefined ? (
+        <div className="p-2 h-48">
+          <img
+            className="mx-auto object-center object-contain max-h-full"
+            src={image}
+            alt="product"
+          />
+        </div>
+      ) : null}
       {off !== undefined ? (
         <p className=" text-red-700 space-x-2 text-[10px] xs:text-xs">
           <span className="text-white bg-red-700 px-1.5 py-1">
