@@ -105,7 +105,7 @@ const Navbar = (props) => {
         <li className="cart cursor-pointer text-xl md:order-7">
           <Link to={"/cart-screen"}>
             <i className="fa-solid fa-cart-shopping"></i>{" "}
-            <span className="hidden md:inline text-base font-bold">Cart</span>{" "}
+            <span className="hidden md:inline text-base font-medium">Cart</span>{" "}
           </Link>
         </li>
         <li className="nav-item search flex items-center mx-auto w-full text-black md:order-3 md:mx-3">
@@ -135,7 +135,7 @@ const Navbar = (props) => {
             id="search"
             placeholder="Search Amazon.in"
           />
-          <div className="bg-white rounded-r-lg focus:outline-4 md:rounded-r-md">
+          <div className="bg-white rounded-r-lg focus:outline-4 md:rounded-r-lg">
             <button className="cursor-pointer rounded-r-lg outline-none border-none px-4 py-2 bg-orange-300 rounded-md hover:bg-orange-400 md:py-[7px] lg:py-[5.5px] md:px-3.5 md:text-xl md:rounded-l-none">
               <i className="fa-solid fa-magnifying-glass text-xl"></i>
             </button>
@@ -147,7 +147,7 @@ const Navbar = (props) => {
           </div>
           <div className="space-y-0 leading-5">
             <div className="upper text-gray-400 text-xs">Select your</div>
-            <div className="lower font-bold">Location</div>
+            <div className="lower font-medium">Location</div>
           </div>
         </li>
         <li className="nav-item country cursor-pointer flex items-center gap-2 md:order-4">
@@ -158,14 +158,14 @@ const Navbar = (props) => {
               alt="indian-flag"
             />
           </div>
-          <div className="flex items-center gap-1 font-bold">
+          <div className="flex items-center gap-1 font-medium">
             EN <i className="fa-solid fa-sort-down text-xs text-gray-400"></i>
           </div>
         </li>
         <li className="nav-item returns cursor-pointer md:order-6">
           <div className="space-y-0 leading-5">
             <div className="upper text-start text-xs">Returns</div>
-            <div className="lower font-bold">& Orders</div>
+            <div className="lower font-medium">& Orders</div>
           </div>
         </li>
       </ul>
@@ -238,10 +238,15 @@ const HamburgerMenu = (props) => {
           </p>
         </header>
         <section>
-          <li className="cursor-pointer flex justify-between items-center px-5 py-5 text-xl font-bold">
-            <span>Amazon Home</span>
-            <i className="fa-solid fa-house"></i>
-          </li>
+          <Link
+            to={"/"}
+            onClick={() => setIsNavOpen((initialValue) => !initialValue)}
+          >
+            <li className="cursor-pointer flex justify-between items-center px-5 py-5 text-xl font-bold">
+              <span>Amazon Home</span>
+              <i className="fa-solid fa-house"></i>
+            </li>
+          </Link>
           <hr className="border-2" />
           <ul className="flex flex-col">
             {/* heading */}

@@ -485,10 +485,7 @@ const HomescreenGrid = () => {
   ];
 
   return (
-    <div
-      id="main-grid"
-      className=" pt-0 absolute top-[70%] z-10 w-full md:top-[60%] lg:top-[50%]"
-    >
+    <div id="main-grid" className=" pt-0 absolute top-[45%] z-10 w-full">
       <div className="p-4">
         {/* grid 1 of 4 */}
         <div

@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 const ProductSlider = (props) => {
   const { title, buttonName, allProductsData } = props;
@@ -50,29 +51,32 @@ const Slide = (props) => {
   const { image, off, offerName, productTitle } = props;
 
   return (
-    <div className="cursor-pointer flex flex-col gap-2 h-full w-fit md:min-w-[190px] max-w-[190px] xs:max-w-[250px]">
-      {image !== undefined ? (
-        <div className="p-2 h-48">
-          <img
-            className="mx-auto object-center object-contain max-h-full"
-            src={image}
-            alt="product"
-          />
-        </div>
-      ) : null}
-      {off !== undefined ? (
-        <p className=" text-red-700 space-x-2 text-[10px] xs:text-xs">
-          <span className="text-white bg-red-700 px-1.5 py-1">
-            Up to {off}% off
-          </span>
-          <span className="capitalize font-bold">{offerName}</span>
-        </p>
-      ) : null}
-      {
-        <p className="text-sm overflow-hidden text-ellipsis whitespace-nowrap">
-          {productTitle}
-        </p>
-      }
-    </div>
+    <Link to={"/productS-listing-page"}>
+      {" "}
+      <div className="cursor-pointer flex flex-col gap-2 h-full w-fit md:min-w-[190px] max-w-[190px] xs:max-w-[250px]">
+        {image !== undefined ? (
+          <div className="p-2 h-48">
+            <img
+              className="mx-auto object-center object-contain max-h-full"
+              src={image}
+              alt="product"
+            />
+          </div>
+        ) : null}
+        {off !== undefined ? (
+          <p className=" text-red-700 space-x-2 text-[10px] xs:text-xs">
+            <span className="text-white bg-red-700 px-1.5 py-1">
+              Up to {off}% off
+            </span>
+            <span className="capitalize font-bold">{offerName}</span>
+          </p>
+        ) : null}
+        {
+          <p className="text-sm overflow-hidden text-ellipsis whitespace-nowrap">
+            {productTitle}
+          </p>
+        }
+      </div>
+    </Link>
   );
 };

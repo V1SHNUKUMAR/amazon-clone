@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import "react-slideshow-image/dist/styles.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -32,16 +33,19 @@ const Slider = (props) => {
         >
           {images.map((image, index) => (
             <SwiperSlide key={index} className="cursor-pointer">
-              <img
-                className="  h-[200px] xs:h-[320px] md:h-[400px] object-top object-cover w-full lg:h-auto md:w-full"
-                src={image.img}
-                alt="sale"
-              />
+              <Link to={"/products-listing-page"}>
+                {" "}
+                <img
+                  className="  h-[200px] xs:h-[320px] md:h-[400px] object-top object-cover w-full lg:h-auto md:w-full"
+                  src={image.img}
+                  alt="sale"
+                />
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
       }
-      <div className="absolute top-[30%] translate-y-[-70%] z-10 w-full text-3xl md:top-[23%] md:translate-y-[-78%]md: md:px-6 md:text-4xl">
+      <div className="absolute top-[20%] translate-y-[-80%] z-10 w-full text-3xl md:top-[20%] md:translate-y-[-80%] md:px-6 md:text-4xl">
         <button
           className=" absolute left-4 hover:scale-125 active:scale-50 duration-200"
           onClick={() => swiperRef.current?.slidePrev()}

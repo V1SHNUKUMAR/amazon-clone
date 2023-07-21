@@ -18,7 +18,7 @@ const ProductListingScreen = (props) => {
     <div className="bg-white ">
       <div className="space-y-2 max-w-[1500px] mx-auto">
         <header className="flex justify-between items-center px-4 py-3 border-b shadow-md">
-          <p>20 items</p>
+          <p>{allProducts.length} items</p>
           <select
             className="px-3 py-1.5 rounded-lg drop-shadow-md border border-gray-300 text-sm"
             name="filter"
@@ -50,7 +50,6 @@ export default ProductListingScreen;
 // GridComponent
 const ListItem = (props) => {
   const context = useContext(globalContext);
-  console.log(context);
   const { setProductDetails } = context;
 
   return (
