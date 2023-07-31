@@ -1,12 +1,15 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Footer from "./Footer";
-import globalContext from "../context/globalContext";
 
 const CartScreen = () => {
-  const context = useContext(globalContext);
-  const { productsList } = context;
+  let productsListFromLocalStorage =
+    JSON.parse(localStorage.getItem("cartItems")) ?? [];
+
+  const [productsList, setProductsList] = useState(
+    productsListFromLocalStorage
+  );
 
   const subTotal = () => {
     let sum = 0;
@@ -18,13 +21,18 @@ const CartScreen = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    // getProductsList();
   });
 
   return (
     <div className="w-full ">
       <div className="max-w-[1500px] mx-auto">
         <div className="CONTENT p-2 flex flex-wrap-reverse gap-2 justify-center items-start md:gap-4 md:px-4 md:py-6 md:flex-nowrap">
-          <ShoppingCart productsList={productsList} subTotal={subTotal()} />
+          <ShoppingCart
+            productsList={productsList}
+            subTotal={subTotal()}
+            setProductsList={setProductsList}
+          />
 
           {productsList.length !== 0 ? (
             <TotalAmount productsList={productsList} subTotal={subTotal()} />
@@ -38,13 +46,9 @@ const CartScreen = () => {
 
 export default CartScreen;
 
+// List of all Cart Items
 const ShoppingCart = (props) => {
-  const { productsList, subTotal } = props;
-  // const productsList = [
-  //   "https://m.media-amazon.com/images/I/71sTY2XLBeL._AC_AA180_.jpg",
-  //   "https://m.media-amazon.com/images/I/51COhKQY9iL._AC_AA180_.jpg",
-  // ];
-  // const productsList = [];
+  const { productsList, subTotal, setProductsList } = props;
 
   return (
     <div className="md:w-4/6 lg:w-3/4">
@@ -63,7 +67,10 @@ const ShoppingCart = (props) => {
             {productsList.map((product, index) => (
               <div key={index}>
                 {" "}
-                <CartProduct product={product} />{" "}
+                <CartProduct
+                  product={product}
+                  setProductsList={setProductsList}
+                />{" "}
               </div>
             ))}{" "}
           </div>
@@ -133,9 +140,17 @@ const TotalAmount = (props) => {
 };
 
 const CartProduct = (props) => {
-  const { product } = props;
-  const context = useContext(globalContext);
-  const { removeFromCart } = context;
+  const { product, setProductsList } = props;
+
+  const removeFromCart = (product) => {
+    let cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    let modifiedList = cartItems.filter(
+      (currentProduct) => currentProduct.key !== product.key
+    );
+    localStorage.setItem("cartItems", JSON.stringify(modifiedList));
+    // setting product list
+    setProductsList(JSON.parse(localStorage.getItem("cartItems")));
+  };
 
   return (
     <div className="px-2 py-3 flex items-center justify-start gap-4 md:gap-6">

@@ -1,13 +1,10 @@
-import { React, useContext, useEffect } from "react";
+import { React, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import AllProducts from "../Data/AllProducts.json";
 import Footer from "./Footer";
-import globalContext from "../context/globalContext";
 
 const ProductListingScreen = (props) => {
-  // const { productsList } = props;
-
   useEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -49,13 +46,15 @@ export default ProductListingScreen;
 
 // GridComponent
 const ListItem = (props) => {
-  const context = useContext(globalContext);
-  const { setProductDetails } = context;
+  let setProductToLocalStorage = (product) => {
+    localStorage.setItem("productDetails", JSON.stringify(product));
+  };
 
   return (
     <li
       className="border rounded-md  text-sm text-center max-w-[260px] h-full 2xl:max-w-xs"
-      onClick={() => setProductDetails(props.product)}
+      // onClick={() => setProductDetails(props.product)}
+      onClick={() => setProductToLocalStorage(props.product)}
     >
       <Link
         to={"/product-listing-page/product-details-page"}

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,19 +12,28 @@ import { Navigation } from "swiper/modules";
 
 import offer_icon from "../assets/offer-icon.png";
 import Footer from "./Footer";
-import globalContext from "../context/globalContext";
 
 const ProductDetailsScreen = () => {
-  const context = useContext(globalContext);
-  const { product, addToCart } = context;
-  // const fetchedProduct = product;
+  let product = JSON.parse(localStorage.getItem("productDetails"));
 
   useEffect(() => {
     window.scrollTo(0, 0);
   });
 
-  const showAlert = () => {
-    alert("Added to cart!");
+  // const showAlert = () => {
+  //   alert("Added to cart!");
+  // };
+
+  // add products to cart and store them in localStorage
+  const addToCart = (product) => {
+    product = { ...product, key: Date.now() };
+    if (JSON.parse(localStorage.getItem("cartItems")) != null) {
+      let cartItems = JSON.parse(localStorage.getItem("cartItems"));
+      cartItems.push(product);
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    } else {
+      localStorage.setItem("cartItems", JSON.stringify([product]));
+    }
   };
 
   return product === null ? (
@@ -94,7 +103,7 @@ const ProductDetailsScreen = () => {
               <button
                 onClick={(e) => {
                   addToCart(product);
-                  showAlert();
+                  // showAlert();
                 }}
                 className="cursor-pointer p-3 bg-yellow-400 w-full md:max-w-[200px] rounded-full drop-shadow-md hover:brightness-90 active:scale-95 md:active:scale-90 transition md:p-2 "
               >
