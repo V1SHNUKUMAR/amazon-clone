@@ -20,9 +20,9 @@ const ProductDetailsScreen = () => {
     window.scrollTo(0, 0);
   });
 
-  // const showAlert = () => {
-  //   alert("Added to cart!");
-  // };
+  const showAlert = () => {
+    alert("Product Added to Cart!");
+  };
 
   // add products to cart and store them in localStorage
   const addToCart = (product) => {
@@ -103,7 +103,7 @@ const ProductDetailsScreen = () => {
               <button
                 onClick={(e) => {
                   addToCart(product);
-                  // showAlert();
+                  showAlert();
                 }}
                 className="cursor-pointer p-3 bg-yellow-400 w-full md:max-w-[200px] rounded-full drop-shadow-md hover:brightness-90 active:scale-95 md:active:scale-90 transition md:p-2 "
               >
