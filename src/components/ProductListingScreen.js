@@ -5,11 +5,20 @@ import AllProducts from "../Data/AllProducts.json";
 import Footer from "./Footer";
 
 const ProductListingScreen = (props) => {
+  const allProducts = AllProducts.allProducts;
+  const options = [
+    { name: "All Products", value: "allProducts" },
+    { name: "Clothing", value: "clothing" },
+    { name: "Mens Clothing", value: "mensClothing" },
+    { name: "Womens Clothing", value: "womensClothing" },
+    { name: "Kids Clothing", value: "kidsClothing" },
+    { name: "Mobiles", value: "mobiles" },
+    { name: "Computer Accessories", value: "computerGadgets" },
+  ];
+
   useEffect(() => {
     window.scrollTo(0, 0);
   });
-
-  const allProducts = AllProducts.allProducts;
 
   return (
     <div className="bg-white ">
@@ -21,10 +30,11 @@ const ProductListingScreen = (props) => {
             name="filter"
             id="filter"
           >
-            <option value="1">Filter 1</option>
-            <option value="2">Filter 2</option>
-            <option value="3">Filter 3</option>
-            <option value="4">Filter 4</option>
+            {options.map((option, index) => (
+              <option key={index} value={option.value}>
+                {option.name}
+              </option>
+            ))}
           </select>
         </header>
 
