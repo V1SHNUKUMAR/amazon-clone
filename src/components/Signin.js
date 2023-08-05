@@ -4,7 +4,7 @@ import { useEffect } from "react";
 const Signin = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();

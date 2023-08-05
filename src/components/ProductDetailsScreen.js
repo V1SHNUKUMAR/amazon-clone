@@ -18,7 +18,7 @@ const ProductDetailsScreen = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []);
 
   const showAlert = () => {
     alert("Product Added to Cart!");

@@ -1,14 +1,17 @@
-import { React, useEffect } from "react";
+import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import AllProducts from "../Data/AllProducts.json";
 import Footer from "./Footer";
 
 const ProductListingScreen = (props) => {
-  const allProducts = AllProducts.allProducts;
+  const allProductsFromFile = AllProducts.allProducts;
+  let allProducts = JSON.parse(localStorage.getItem("productsList")) ?? [];
+
   const options = [
     { name: "All Products", value: "allProducts" },
-    { name: "Clothing", value: "clothing" },
+    { name: "Low to High", value: "lowToHigh" },
+    { name: "High to Low", value: "highToLow" },
     { name: "Mens Clothing", value: "mensClothing" },
     { name: "Womens Clothing", value: "womensClothing" },
     { name: "Kids Clothing", value: "kidsClothing" },
@@ -16,19 +19,51 @@ const ProductListingScreen = (props) => {
     { name: "Computer Accessories", value: "computerGadgets" },
   ];
 
+  const [products, setProducts] = useState(allProducts);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    localStorage.setItem("productsList", JSON.stringify(allProductsFromFile));
   });
+
+  const sortProductsByPrice = (isLowToHigh = true) => {
+    let productsList = JSON.parse(localStorage.getItem("productsList"));
+    if (isLowToHigh) {
+      productsList.sort((a, b) => a.price - b.price);
+    } else {
+      productsList.sort((a, b) => b.price - a.price);
+    }
+    setProducts(productsList);
+    localStorage.setItem("productsList", JSON.stringify(productsList));
+  };
+
+  // filter products
+  const applyFilter = (e) => {
+    let productsList = JSON.parse(localStorage.getItem("productsList"));
+    if (e.target.value === "lowToHigh" || e.target.value === "highToLow") {
+      sortProductsByPrice(e.target.value === "lowToHigh");
+    } else if (e.target.value === "allProducts") {
+      setProducts(allProductsFromFile);
+      localStorage.setItem("productsList", JSON.stringify(allProductsFromFile));
+    } else {
+      const newProductList = productsList.filter(
+        (currentProd) => currentProd.subCategory === e.target.value
+      );
+      setProducts(newProductList);
+      localStorage.setItem("productsList", JSON.stringify(newProductList));
+    }
+  };
 
   return (
     <div className="bg-white ">
       <div className="space-y-2 max-w-[1500px] mx-auto">
         <header className="flex justify-between items-center px-4 py-3 border-b shadow-md">
-          <p>{allProducts.length} items</p>
+          <p>{products.length} items</p>
           <select
-            className="px-3 py-1.5 rounded-lg drop-shadow-md border border-gray-300 text-sm"
+            className="px-1 py-1.5 rounded-lg drop-shadow-md border border-gray-300 text-sm"
             name="filter"
             id="filter"
+            onChange={applyFilter}
           >
             {options.map((option, index) => (
               <option key={index} value={option.value}>
@@ -41,7 +76,7 @@ const ProductListingScreen = (props) => {
         <section className="px-2 py-2 md:px-4">
           <h2 className="font-semibold text-xl">Results</h2>
           <div className="py-2 grid place-items-center grid-cols-2 gap-2 list-none sm:grid-cols-3 lg:grid-cols-4">
-            {allProducts.map((product, index) => (
+            {products.map((product, index) => (
               <ListItem key={index} product={product} />
             ))}
           </div>
