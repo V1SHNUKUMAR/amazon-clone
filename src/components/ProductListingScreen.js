@@ -6,7 +6,7 @@ import Footer from "./Footer";
 
 const ProductListingScreen = (props) => {
   const allProductsFromFile = AllProducts.allProducts;
-  let allProducts = JSON.parse(localStorage.getItem("productsList")) ?? [];
+  // let allProducts = JSON.parse(localStorage.getItem("productsList")) ?? [];
 
   const options = [
     { name: "All Products", value: "allProducts" },
