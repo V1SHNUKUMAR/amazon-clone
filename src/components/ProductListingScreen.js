@@ -5,7 +5,7 @@ import AllProducts from "../Data/AllProducts.json";
 import Footer from "./Footer";
 
 const ProductListingScreen = (props) => {
-  const allProductsFromFile = AllProducts.allProducts;
+  const products = AllProducts.allProducts;
   // let allProducts = JSON.parse(localStorage.getItem("productsList")) ?? [];
 
   const options = [
@@ -19,40 +19,40 @@ const ProductListingScreen = (props) => {
     { name: "Computer Accessories", value: "computerGadgets" },
   ];
 
-  const [products, setProducts] = useState(allProductsFromFile);
+  // const [products, setProducts] = useState(allProductsFromFile);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    localStorage.setItem("productsList", JSON.stringify(allProductsFromFile));
+    // localStorage.setItem("productsList", JSON.stringify(allProductsFromFile));
   });
 
-  const sortProductsByPrice = (isLowToHigh = true) => {
-    let productsList = JSON.parse(localStorage.getItem("productsList"));
-    if (isLowToHigh) {
-      productsList.sort((a, b) => a.price - b.price);
-    } else {
-      productsList.sort((a, b) => b.price - a.price);
-    }
-    setProducts(productsList);
-    localStorage.setItem("productsList", JSON.stringify(productsList));
-  };
+  // const sortProductsByPrice = (isLowToHigh = true) => {
+  //   let productsList = JSON.parse(localStorage.getItem("productsList"));
+  //   if (isLowToHigh) {
+  //     productsList.sort((a, b) => a.price - b.price);
+  //   } else {
+  //     productsList.sort((a, b) => b.price - a.price);
+  //   }
+  //   setProducts(productsList);
+  //   localStorage.setItem("productsList", JSON.stringify(productsList));
+  // };
 
   // filter products
-  const applyFilter = (e) => {
-    let productsList = JSON.parse(localStorage.getItem("productsList"));
-    if (e.target.value === "lowToHigh" || e.target.value === "highToLow") {
-      sortProductsByPrice(e.target.value === "lowToHigh");
-    } else if (e.target.value === "allProducts") {
-      setProducts(allProductsFromFile);
-      localStorage.setItem("productsList", JSON.stringify(allProductsFromFile));
-    } else {
-      const newProductList = productsList.filter(
-        (currentProd) => currentProd.subCategory === e.target.value
-      );
-      setProducts(newProductList);
-      localStorage.setItem("productsList", JSON.stringify(newProductList));
-    }
-  };
+  // const applyFilter = (e) => {
+  //   let productsList = JSON.parse(localStorage.getItem("productsList"));
+  //   if (e.target.value === "lowToHigh" || e.target.value === "highToLow") {
+  //     sortProductsByPrice(e.target.value === "lowToHigh");
+  //   } else if (e.target.value === "allProducts") {
+  //     setProducts(allProductsFromFile);
+  //     localStorage.setItem("productsList", JSON.stringify(allProductsFromFile));
+  //   } else {
+  //     const newProductList = productsList.filter(
+  //       (currentProd) => currentProd.subCategory === e.target.value
+  //     );
+  //     setProducts(newProductList);
+  //     localStorage.setItem("productsList", JSON.stringify(newProductList));
+  //   }
+  // };
 
   return (
     <div className="bg-white ">
@@ -63,7 +63,7 @@ const ProductListingScreen = (props) => {
             className="px-1 py-1.5 rounded-lg drop-shadow-md border border-gray-300 text-sm"
             name="filter"
             id="filter"
-            onChange={applyFilter}
+            // onChange={applyFilter}
           >
             {options.map((option, index) => (
               <option key={index} value={option.value}>
