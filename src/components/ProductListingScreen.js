@@ -19,7 +19,7 @@ const ProductListingScreen = (props) => {
     { name: "Computer Accessories", value: "computerGadgets" },
   ];
 
-  const [products, setProducts] = useState(allProducts);
+  const [products, setProducts] = useState(allProductsFromFile);
 
   useEffect(() => {
     window.scrollTo(0, 0);
