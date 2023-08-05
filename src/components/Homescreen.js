@@ -24,7 +24,7 @@ const Homescreen = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  });
 
   return (
     <div className="relative max-w-[1500px] mx-auto">

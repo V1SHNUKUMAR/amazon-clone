@@ -22,7 +22,7 @@ const CartScreen = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     // getProductsList();
-  }, []);
+  });
 
   return (
     <div className="w-full ">
