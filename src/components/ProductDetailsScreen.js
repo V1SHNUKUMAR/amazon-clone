@@ -13,6 +13,9 @@ import { Navigation } from "swiper/modules";
 import offer_icon from "../assets/offer-icon.png";
 import Footer from "./Footer";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const ProductDetailsScreen = () => {
   let product = JSON.parse(localStorage.getItem("productDetails"));
 
@@ -21,7 +24,8 @@ const ProductDetailsScreen = () => {
   });
 
   const showAlert = () => {
-    alert("Product Added to Cart!");
+    // alert("Product Added to Cart!");
+    toast.success("Product Added to Cart!");
   };
 
   // add products to cart and store them in localStorage
@@ -48,80 +52,84 @@ const ProductDetailsScreen = () => {
       </Link>
     </div>
   ) : (
-    <div className="bg-white">
-      <div className=" max-w-[1500px] mx-auto">
-        <div className=" flex flex-col justify-center gap-4 sm:gap-1 lg:gap-10 md:flex-row pb-10 md:pt-10 md:px-4">
-          {/* product image */}
-          <img
-            className=" object-contain object-top sm:max-w-xs lg:max-w-sm w-fit mx-auto md:mx-0"
-            // src="https://m.media-amazon.com/images/I/61XmAscW1NL._SY450_.jpg"
-            src={product.imgUrl}
-            alt=""
-          />
-          {/* product details */}
-          <section className="px-3 w-full space-y-2 text-sm md:max-w-2xl ">
-            <h1 className="text-base md:text-2xl">
-              {/* Lymio Casual Shirt for Men|| Shirt for Men|| Men Stylish Shirt ||
-              Men Printed Shirt (Mistry) */}
-              {product.title}
-            </h1>
-            {/* rating stars */}
-            <p className="RATING_STARS text-amber-500 text-xs">
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star-half-stroke"></i>
-              <i className="fa-regular fa-star"></i>
-            </p>
-            <hr className="mt-1" />
-            <h2>
-              &#8377;<span className="text-3xl">{product.price}</span>
-            </h2>
-            <h3 className="text-gray-500 text-xs">
-              M.R.P.: <span className="line-through">&#8377;{product.MRP}</span>
-            </h3>
+    <>
+      <div className="bg-white">
+        <div className=" max-w-[1500px] mx-auto">
+          <div className=" flex flex-col justify-center gap-4 sm:gap-1 lg:gap-10 md:flex-row pb-10 md:pt-10 md:px-4">
+            {/* product image */}
             <img
-              className="w-16 object-contain py-1"
-              src="https://m.media-amazon.com/images/G/31/marketing/fba/fba-badge_18px._CB485936079_.png"
+              className=" object-contain object-top sm:max-w-xs lg:max-w-sm w-fit mx-auto md:mx-0"
+              // src="https://m.media-amazon.com/images/I/61XmAscW1NL._SY450_.jpg"
+              src={product.imgUrl}
               alt=""
             />
-            <p>Inclusive of all taxes</p>
-            <hr className="my-3" />
-            {/* Offers */}
-            <h4 className="flex items-center gap-3 md:gap-4 pt-2">
-              <img className="w-6" src={offer_icon} alt="" />
-              <p className="font-bold text-base">Offers</p>
-            </h4>
-            <section className="w-full list-none flex gap-3 items-center">
-              <OfferSlider />
+            {/* product details */}
+            <section className="px-3 w-full space-y-2 text-sm md:max-w-2xl ">
+              <h1 className="text-base md:text-2xl">
+                {/* Lymio Casual Shirt for Men|| Shirt for Men|| Men Stylish Shirt ||
+              Men Printed Shirt (Mistry) */}
+                {product.title}
+              </h1>
+              {/* rating stars */}
+              <p className="RATING_STARS text-amber-500 text-xs">
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star-half-stroke"></i>
+                <i className="fa-regular fa-star"></i>
+              </p>
+              <hr className="mt-1" />
+              <h2>
+                &#8377;<span className="text-3xl">{product.price}</span>
+              </h2>
+              <h3 className="text-gray-500 text-xs">
+                M.R.P.:{" "}
+                <span className="line-through">&#8377;{product.MRP}</span>
+              </h3>
+              <img
+                className="w-16 object-contain py-1"
+                src="https://m.media-amazon.com/images/G/31/marketing/fba/fba-badge_18px._CB485936079_.png"
+                alt=""
+              />
+              <p>Inclusive of all taxes</p>
+              <hr className="my-3" />
+              {/* Offers */}
+              <h4 className="flex items-center gap-3 md:gap-4 pt-2">
+                <img className="w-6" src={offer_icon} alt="" />
+                <p className="font-bold text-base">Offers</p>
+              </h4>
+              <section className="w-full list-none flex gap-3 items-center">
+                <OfferSlider />
+              </section>
+              <hr className="my-3" />
+              {/* Benefits */}
+              <BenefitsList />
+              <hr className="my-3" />
+              <div className="BUTTONS py-6 flex flex-col gap-3 items-center md:flex-row ">
+                <button
+                  onClick={(e) => {
+                    addToCart(product);
+                    showAlert();
+                  }}
+                  className="cursor-pointer p-3 bg-yellow-400 w-full md:max-w-[200px] rounded-full drop-shadow-md hover:brightness-90 active:scale-95 md:active:scale-90 transition md:p-2 "
+                >
+                  Add to Cart
+                </button>
+                <button className="cursor-pointer p-3 bg-amber-500 w-full md:max-w-[200px] rounded-full drop-shadow-md hover:brightness-90 active:scale-95 md:active:scale-90 transition md:p-2">
+                  Buy Now
+                </button>
+              </div>
             </section>
-            <hr className="my-3" />
-            {/* Benefits */}
-            <BenefitsList />
-            <hr className="my-3" />
-            <div className="BUTTONS py-6 flex flex-col gap-3 items-center md:flex-row ">
-              <button
-                onClick={(e) => {
-                  addToCart(product);
-                  showAlert();
-                }}
-                className="cursor-pointer p-3 bg-yellow-400 w-full md:max-w-[200px] rounded-full drop-shadow-md hover:brightness-90 active:scale-95 md:active:scale-90 transition md:p-2 "
-              >
-                Add to Cart
-              </button>
-              <button className="cursor-pointer p-3 bg-amber-500 w-full md:max-w-[200px] rounded-full drop-shadow-md hover:brightness-90 active:scale-95 md:active:scale-90 transition md:p-2">
-                Buy Now
-              </button>
-            </div>
-          </section>
-          {/* buttons */}
-          {/* <section className="h-screen w-full md:w-1/5 border border-red-400">
+            {/* buttons */}
+            {/* <section className="h-screen w-full md:w-1/5 border border-red-400">
             Buttons
           </section> */}
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+      <ToastContainer />
+    </>
   );
 };
 
